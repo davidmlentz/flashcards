@@ -1,0 +1,284 @@
+1 Q: How long are temporary credential issued by STS valid?
+1 A: 15 minutes minimum; 1 hour maximum
+
+2 Q: How many roles at a time can be applied to an EC2 instance?
+2 A: 1 role at a time
+
+3 Q: ${www.amazon.com/user_id} is an example of a _____.
+3 A: IAM policy variable
+
+4 Q: What AWS service allows you to share resources that you own with other AWS accounts?
+4 A: Resource Access Manager (RAM)
+
+5 Q: True or False: CloudTrail is enabled by default?
+5 A: True
+
+6 Q: How far back does CloudTrail show activity?
+6 A: 90 days
+
+7 Q: What’s the maximum amount of time CloudTrail requires to deliver events (e.g., to CloudWatch Events, CloudWatch Logs, or S3)?
+7 A: 15 min
+
+8 Q: What are the 4 methods of encryption for S3 objects?
+8 A: SSE-C, SSE-S3, SSE-KMS, & client-side
+
+9 Q: What are the 3 targets for S3 Events Notifications?
+9 A: SNS, SQS, Lambda
+
+10 Q: What stack layer does WAF operate on?
+10 A: Layer 7 (application layer)
+
+11 Q: What AWS services does WAF operate on?
+11 A: CloudFront, ALB, API Gateway
+
+12 Q: What AWS service scans running EC2 instances for OS vulnerabilities and unintended network accessibility?
+12 A: AWS Inspector
+
+13 Q: True or False: AWS Inspector requires an agent.
+13 A: True.
+
+14 Q: True or False: you can define custom rules for AWS Inspector.
+14 A: False
+
+15 Q: What AWS service audits and reports on the compliance of your AWS resources and tracks their configurations over time?
+15 A: AWS Config
+
+16 Q: True or False: AWS Config can prevent a user from making changes that violate config rules you define.
+16 A: False. It reports on compliance violations via an SNS topic but doesn’t prevent any changes.
+
+17 Q: True or False: you can define custom rules for AWS Config.
+17 A: True. There are AWS managed rules and you can create your own (using Lambda).
+
+18 Q: True or False: AWS Config can trigger an auto-remediation to bring a resource into compliance if it fails a check.
+18 A: True. You define remediations in SSM Automations
+
+19 Q: What AWS service uses ML and anomaly detection to detect threats against your other AWS services?
+19 A: GuardDuty. 
+
+20 Q: What are the three sources of logs GuardDuty analyzes to detect threats?
+20 A: Route 53, CloudTrail, and VPC Flow Logs.
+
+21 Q: What is the name of the AWS CodeDeploy entity for grouping EC2 instances or AWS Lambda functions in a  deployment?
+21 A: A deployment group
+
+22 Q: What is the name of the DX feature that allows you to manage multiple ports as a single larger connection instead of as separate discrete connections?
+22 A: Link Aggregation Groups (LAG)
+
+23 Q: What is the name of the DX feature that groups virtual private gateways (VGWs) and private virtual interfaces (VIFs)?
+23 A: Direct Connect gateway
+
+24 Q: Does AWS Managed VPN service support Jumbo Frames?
+24 A: No
+
+25 Q: What AWS service provides APIs you can call to obtain temporary security credentials?
+25 A: STS
+
+26 Q: If you’re offering an endpoint service, what kind of a load balancer do you use?
+26 A: NLB
+
+27 Q: T or F: You can use Direct Connect for a connection between an interface endpoint and your on-premises data center.
+27 A: True
+
+28 Q: T or F: You can use Site-to-Site VPN for a connection between an interface endpoint and your on-premises data center.
+28 A: True
+
+29 Q: To get the client IP addresses from the requests to you endpoint service, enable ____ ____ on your load balancer. 
+29 A: Proxy protocol
+
+30 Q: T or F: Simple AD supports MFA.
+30 A: F
+
+31 Q: T or F: Simple AD supports trust relationships.
+31 A: F
+
+32 Q: T or F: Simple AD supports Kerberos-based SSO.
+32 A: T
+
+33 Q: T or F: Your CloudHSM must be located in a VPC.
+33 A: T
+
+34 Q: T or F: You can generate public certificates for free using ACM.
+34 A: T
+
+35 Q: T or F: You can import a 3rd-party certificate into ACM.
+35 A: T
+
+36 Q: T or F: ACM allows you to set up a wildcard certificate so that a single cert covers multiple domains.
+36 A: T
+
+37 Q: T or F: ACM automatically renews certificates you generate within ACM.
+37 A: T
+
+38 Q: T or F: In ACM, you can create a private certificate authority so you can generate your own SSL/TLS certs.
+38 A: T
+
+39 Q: What AWS service is described as a framework for allowing administrators to create pre-defined products and landscapes for their users?
+39 A: AWS Service Catalog
+
+40 Q: In AWS Service Catalog, if an administrator removes a product from a portfolio, will the existing running instances of that product get shut down?
+40 A: No.
+
+41 Q: What is the name for the IAM role that AWS Service Catalog assumes when a user launches a product?
+41 A: Launch constraint
+
+42 Q: What is the name for the SNS topic that AWS Service Catalog publishes to when a user launches a product?
+42 A: Notification constraint
+
+43 Q: What is the name of the set of rules in AWS Service Catalog that define the UI a user sees and actions s/he can take when launching a product?
+43 A: Template constraint
+
+44 Q: Can you share an AWS Service Catalog service portfolio with another account?
+44 A: Yes
+
+45 Q: T or F: An administrator in a sub-account that inherits a shared AWS Service Catalog portfolio can also create a local portfolio to further restrict permissions.
+45 A: True
+
+46 Q: What EC2 family provides a lot of RAM?
+46 A: R
+
+47 Q: What EC2 family provides a lot of CPU?
+47 A: C
+
+48 Q: What EC2 family provides a balanced resources for general purpose?
+48 A: M
+
+49 Q: What EC2 family provides fast I/O?
+49 A: I
+
+50 Q: What EC2 family provides a GPU and is well suited for machine learning or video rendering?
+50 A: G
+
+51 Q: What EC2 placement group strategy places your instances all in a single AZ and provides low latency?
+51 A: Cluster placment group
+
+52 Q: What EC2 placement group strategy is best suited for high-performance computing (HPC)?
+52 A: Cluster placement group
+
+53 Q: What EC2 placement group strategy places instance across different unerlying hardware?
+53 A: Spread placement group
+
+54 Q: In a spread placement group, you can have no more than _ instances per group per AZ?
+54 A: 7 
+
+55 Q: What EC2 placement group strategy divides each group into logical segments and places each segment on its own set of racks?
+55 A: Partition placement group
+
+56 Q: T or F: You can move an instance into and/or out of an existing placement group?
+56 A: T
+
+57 Q: T or F: You can move a running instance into or out of a placement group.
+57 A: F. You need to stop the instance before you move it out of the placement group.
+
+58 Q: T or F: If you choose EC2 instance types that support enhanced networking to use in your cluster placement group, you can speed up data transfer within the group?
+58 A: T
+
+59 Q: T or F: A spread placement group can span AZs.
+59 A: T
+
+60 Q: What EC2 placement group strategies are best suited for high availability?
+60 A: Spread placement group and partition placement group
+
+61 Q: T or F: AWS collects memory usage metrics from EC2 instances.
+61 A: F. You can write a script to do this but it's a custom metric.
+
+62 Q: If an EC2 instance's underlying hardware fails, the instance will fail its ____ ____ check.
+62 A: System status 
+
+63 Q: T or F: If an EC2 instance's system status check fails, you can likely fix it by restarting the instance.
+63 A: T
+
+64 Q: If an EC2 instance's networking is misconfigured, the instance will fail its ____ ____ check.
+64 A: Instance status
+
+65 Q: If an EC2 instance's filesystem is corrupt, the instance may fail its ____ ____ check.
+65 A: Instance status
+
+66 Q: T or F: If an EC2 instance fails its instance status check, it's possible to restart it automatically.
+66 A: T. You set a CloudWatch Alarm to automatically perform an Instance Recovery.
+
+67 Q: T or F: If an EC2 instance fails its system status check, it's possible to restart it automatically.
+67 A: T. You set a CloudWatch Alarm to automatically perform an Instance Recovery.
+
+68 Q: T or F: If you trigger an Instance Recovery on an EC2 instance, it will restart with the same IP addresses and placement groups.
+68 A: T. It keeps the same public IP, private IP, elastic IP, metadata, and placement group
+
+69 Q: T or F: All current generation instances support jumbo frames.
+69 A: T
+
+70 Q: VPN connections and traffic sent over an Internet gateway can use jumbo frames.
+70 A: F. VPN connections and traffic sent over an Internet gateway are limited to 1500 MTU.
+
+71 Q: T or F: You cannot use jumbo frames for traffic between your VPCs and your on-premises networks over AWS Direct Connect.
+71 A: F
+
+72 Q: T or F: EBS supports RAID 0.
+72 A: T
+
+73 Q: T or F: EBS supports RAID 1.
+73 A: T
+
+74 Q: T or F: AWS advises against using RAID 5 w/EBS.
+74 A: T. Too much network traffic. 
+
+75 Q: T or F: AWS advises against using RAID 6 w/EBS.
+75 A: T. Too much network traffic.
+
+76 Q: T or F: EBS supports RAID 10.
+76 A: T
+
+77 Q: What AWS service provides real-time access to changes in data event sources: AWS services, your own applications and Software-as-a-Service (SaaS) applications.
+77 A: Amazon EventBridge
+
+78 Q: What AWS service is recommended when you want to build an application that reacts to events from SaaS applications and/or AWS services.
+78 A: Amazon EventBridge
+
+79 Q: T or F: Amazon EventBridge integrates directly with third-party SaaS partners.
+79 A: T. EventBridge is the only event-based service that integrates directly with third-party SaaS partners.
+
+80 Q: What AWS service can be used to stop and start Amazon EC2 instances by running AWS Command Line Interface (CLI) file commands on a set schedule.
+80 A: AWS Data Pipeline 
+
+81 Q: T or F: You can use Amazon CloudWatch alarms to automatically stop or terminate EC2 instances that have gone unused or underutilized for too long.
+81 A: T
+
+82 Q: How far back does CloudWatch Alarms' history go?
+82 A: 14 days
+
+83 Q: What db engines are supported by RDS?
+83 A: MariaDB, MySQL, SQL Server, Oracle, Aurora, PostgreSQL. (MMSOAP)
+
+84 Q: A ____ defines the maximum available permissions for IAM entities in an account.
+84 A: Service Control Policy
+
+85 Q: T or F: Service Control Policies grant permissions to IAM users.
+85 A: F. 
+
+86 Q: ______ provides the outer boundary of anything that can be done in an AWS account.
+86 A: Service Control Policy
+
+87 Q: T or F: You can attach SCPs to the organization root.
+87 A: T
+
+88 Q: T or F: You can attach SCPs to an individual account.
+88 A: T
+
+89 Q: T or F: You can attach SCPs to an OU.
+89 A: T
+
+90 Q: What's the max size of an EBS volume?
+90 A: 16 TB
+
+91 Q: What AWS service safeguards against various forms of DDoS attack vectors.
+91 A: AWS Shield
+
+92 Q: T or F: You can move an instance in to or out of a placement group using the EC2 console.
+92 A: F. You can do this using the CLI or AWS Tools for Windows PowerShell.
+
+93 Q: What sizes (2) does Snowball come in? 
+93 A: 50 TB or 80 TB. 
+
+94 Q: What's the storage capacity of Snowball Edge?
+94 A: 100 TB
+
+95 Q: T or F: When you make a rule change on a security group, it takes effect immediately.
+95 A: T
