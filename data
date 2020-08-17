@@ -154,7 +154,7 @@
 52 Q: What EC2 placement group strategy is best suited for high-performance computing (HPC)?
 52 A: Cluster placement group
 
-53 Q: What EC2 placement group strategy places instance across different unerlying hardware?
+53 Q: What EC2 placement group strategy places instances across different unerlying hardware?
 53 A: Spread placement group
 
 54 Q: In a spread placement group, you can have no more than _ instances per group per AZ?
@@ -282,3 +282,15 @@
 
 95 Q: T or F: When you make a rule change on a security group, it takes effect immediately.
 95 A: T
+
+96: Q: What AWS service helps create Hadoop clusters to analyze and process largte amounts of data?
+96: A: Amazon EMR
+
+97: Q: T or F: Amazon EMR takes care of all the provisioning and configuration of EC2 instances in the cluster.
+97: A: T
+
+98: Q: What AWS service is best suited for data processing, machine learning, web indexing, and big data?
+98: A: Amazon EMR
+
+99: Q: What are the 5 destinations CloudWatch Logs can send to?
+99: A: S3, Kinesis Data Streams, Kinesis Data Firehose, Lambda, ElasticSearch
