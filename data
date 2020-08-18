@@ -399,3 +399,40 @@
 
 134 Q: What's the maximum amount of time it can take CloudWatch Logs to export data to S3?
 134 A: 12 hours
+
+135 Q: T or F: Elastic Beanstalk supports Docker.
+135 A: T. Single container, multi container, or preconfigured.
+
+136 Q: T or F: Elastic Beanstalk supports Go.
+136 A: T.
+
+137 Q: T or F: Elastic Beanstalk supports Jav.
+137 A: T. Java SE and Java w/Tomcat
+
+138 Q: T or F: Elastic Beanstalk supports .NET.
+138 A: T. .NET on Windows Server w/IIS
+
+139 Q: T or F: Elastic Beanstalk supports Node.js.
+139 A: T.
+
+140 Q: T or F: Elastic Beanstalk supports PHP.
+140 A: T.
+
+141 Q: T or F: Elastic Beanstalk supports Python.
+141 A: T.
+
+142 Q: T or F: Elastic Beanstalk supports Ruby.
+142 A: T.
+
+143 Q: T or F: Elastic Beanstalk supports Packer Builder.
+143 A: T.
+
+144 Q: T or F: Elastic Beanstalk supports Bash.
+144 A: F.
+
+145 Q: T or F: Elastic Beanstalk supports HTML5.
+145 A: F.
+
+146 Q: T or F: Elastic Beanstalk supports AngularJS.
+146 A: F.
+
