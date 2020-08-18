@@ -388,4 +388,14 @@
 130 Q: T or F: You can use a CloudWatch Alarm to stop an EC2 instance.
 130 A: T. Reboot, stop, terminate, or recover.
 
+131 Q: T or F: A CloudWatch Dashboard shows metrics from only a single region.
+131 A: F. A CloudWatch Dashboard can show metrics from multiple regions.
 
+132 Q: T or F: KMS encryption of CloudWatch Logs is optional.
+132 A: T.
+
+133 Q: T or F: CloudWatch Logs can export logs to an S3 bucket only if it's SSE-KMS encrypted.
+133 A: F. Exporting to S3 buckets that are SSE-S3 encrypted (AES-256) is supported. Exporting to S3 buckets encrypted with SSE-KMS is not supported.
+
+134 Q: What's the maximum amount of time it can take CloudWatch Logs to export data to S3?
+134 A: 12 hours
