@@ -374,6 +374,18 @@
 125 A: Blocked. When you create a security group, everything’s blocked by default.
 
 126 Q: T or F: If you add a security group to an EC2 instance, that takes effect immediately.
-126 Q: T
+126 A: T
+
+127 Q: High-resolution custom metrics have a resolution of ______.
+127 A: 1 second
+
+128 Q: Standard-resolution custom metrics have a resolution of _____.
+128 A: 1 minute
+
+129 Q: T or F: CloudWatch Alarms can publish to CloudWatch Events.
+129 A: T.
+
+130 Q: T or F: You can use a CloudWatch Alarm to stop an EC2 instance.
+130 A: T. Reboot, stop, terminate, or recover.
 
 
