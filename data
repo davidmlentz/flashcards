@@ -139,7 +139,7 @@
 47 Q: What EC2 family provides a lot of CPU?
 47 A: C
 
-48 Q: What EC2 family provides a balanced resources for general purpose?
+48 Q: What EC2 family provides balanced resources for general purpose?
 48 A: M
 
 49 Q: What EC2 family provides fast I/O?
@@ -283,14 +283,97 @@
 95 Q: T or F: When you make a rule change on a security group, it takes effect immediately.
 95 A: T
 
-96: Q: What AWS service helps create Hadoop clusters to analyze and process largte amounts of data?
-96: A: Amazon EMR
+96 Q: What AWS service helps create Hadoop clusters to analyze and process largte amounts of data?
+96 A: Amazon EMR
 
-97: Q: T or F: Amazon EMR takes care of all the provisioning and configuration of EC2 instances in the cluster.
-97: A: T
+97 Q: T or F: Amazon EMR takes care of all the provisioning and configuration of EC2 instances in the cluster.
+97 A: T
 
-98: Q: What AWS service is best suited for data processing, machine learning, web indexing, and big data?
-98: A: Amazon EMR
+98 Q: What AWS service is best suited for data processing, machine learning, web indexing, and big data?
+98 A: Amazon EMR
 
-99: Q: What are the 5 destinations CloudWatch Logs can send to?
-99: A: S3, Kinesis Data Streams, Kinesis Data Firehose, Lambda, ElasticSearch
+99 Q: What are the 5 destinations CloudWatch Logs can send to?
+99 A: S3, Kinesis Data Streams, Kinesis Data Firehose, Lambda, ElasticSearch
+
+100 Q: T or F: You can trigger autoscaling actions based on an EC2's RAM usage.
+100 A: T. But it's a custom metric.
+
+101 Q: What are the allowable sizes of objects in S3?
+101 A: 0 bytes to 5 TB
+
+102 Q: What is the minimum part size in an S3 multipart upload?
+102 A: 5 MB
+
+103 Q: What is the maximum part size in an S3 multipart upload?
+103 A: 5 GB
+
+104 Q: T or F: You can configure an EMR cluster to back up its data to S3 automatically.
+104 A: T. Every 5 minutes
+
+105 Q: T or F: EMR can directly read and query data from Kinesis streams.
+105 A: T. It requires that you use the EMR Connector to Kinesis.
+
+106 Q: What AWS service is best suited for running Apache Spark in the cloud?
+106 A: Amazon EMR
+
+107 Q: What Amazon EMR feature provides managed environment for preparing and visualizing data, collaborating, building applications, and performing interactive analysis using EMR clusters?
+107 A: Notebooks
+
+108 Q: ____ is an open source tool in the Hadoop ecosystem for interactive, ad hoc querying using SQL syntax that allows you to query your data in HDFS or HBase tables.
+108 A: Impala
+
+109 Q: _____ is an open source analytics package, operate by a SQL-like language, that runs on top of Hadoop. 
+109 A: Pig
+
+110 Q: _____ is an open source, non-relational (columnar), distributed database.
+110 A: HBase
+
+111 Q: T or F: Data stored on HDFS in an EMR cluster is ephemeral is persistent.
+111 A: F. Data stored on HDFS in an EMR cluster is ephemeral so it will be deleted when a cluster is terminated.
+
+112 Q: What are the 3 types of nodes in an EMR cluster?
+112 A: Master nodes, core nodes (storage), and task nodes
+
+113 Q: T or F: You can run Amazon ECS clusters on Spot Instances.
+113 A: T.
+
+114 Q: ___ ___ produces results that will remain valid even as the size of an Elasticache cluster changes.
+114 A: consistent hashing
+
+115 Q: T or F: Elasticache autodiscovery works for both Memcached and Redis.
+115 A: F. AutoDiscovery only works for Memcached, not Redis.
+
+116 Q: ___ ___ is the best caching strategy anywhere in your application where you have data that is going to be read often, but written infrequently.
+116 A: lazy caching
+
+117 Q: T or F: both Redis and Memcached can use multiple nodes.
+117 A: F. Redis data structures cannot be horizontally sharded. As a result, Redis ElastiCache clusters are always a single node, rather than the multiple nodes we saw with Memcached.
+
+118 Q: T or F: Elasticache Redis supports read repicas.
+118 A: T. Redis supports replication...primary node can have one or more replica nodes. A Redis primary node can handle both reads and writes from the app. Redis replica nodes can only handle reads.
+
+119 Q: T or F: Elasticache Redis supports encryption at rest and in transit.
+119 A: T.
+
+120 Q: T or F: Elasticache Memcached supports encryption at rest and in transit.
+120 A: F. Elasticache Memcached does not support encryption.
+
+121 Q: T or F: When you change a rule on a security group, it takes effect immediately.
+121 A: T.
+
+122 Q: T or F: With security groups, you can’t blacklist or block a port or IP address.
+122 A: T. You cannot. You can do that with a NACL, though.
+
+123 Q: T or F: With NACLs, you can blacklist or block a port or IP address.
+123 A: T.
+
+124 Q: NACLs must have an outbound rule to enable traffic destined for ____ ports.
+124 A: ephemeral
+
+125 Q: When you create a security group, everything is ____ by default.
+125 A: Blocked. When you create a security group, everything’s blocked by default.
+
+126 Q: T or F: If you add a security group to an EC2 instance, that takes effect immediately.
+126 Q: T
+
+
