@@ -283,7 +283,7 @@
 95 Q: T or F: When you make a rule change on a security group, it takes effect immediately.
 95 A: T
 
-96 Q: What AWS service helps create Hadoop clusters to analyze and process largte amounts of data?
+96 Q: What AWS service helps create Hadoop clusters to analyze and process large amounts of data?
 96 A: Amazon EMR
 
 97 Q: T or F: Amazon EMR takes care of all the provisioning and configuration of EC2 instances in the cluster.
