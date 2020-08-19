@@ -35,7 +35,7 @@
 12 A: AWS Inspector
 
 13 Q: True or False: AWS Inspector requires an agent.
-13 A: True.
+13 A: True. (Actually the FAQ calls this an "optional agent.")
 
 14 Q: True or False: you can define custom rules for AWS Inspector.
 14 A: False
@@ -435,4 +435,28 @@
 
 146 Q: T or F: Elastic Beanstalk supports AngularJS.
 146 A: F.
+
+147 Q: What AWS service is a security management tool that makes it easier for you to configure your AWS WAF rules across your accounts.
+147 A: AWS Firewall Manager 
+
+148 Q: What AWS service monitors for new resources or accounts created to ensure they comply with a mandatory set of security policies.
+148 A: AWS Firewall Manager
+
+149 Q: Which AWS service includes a compliance dashboard that indicates which accounts/resources are compliant and which ones are not.
+149 A: AWS Firewall Manager
+
+150 Q: T or F: AWS Firewall Manager includes both manual and automatic remediation modes.
+150 A: T.
+
+151 Q: Which AWS service is an automated security assessment service that helps you test the network accessibility of your Amazon EC2 instances and the security state of your applications running on the instances.
+151 A: Amazon Inspector
+
+152 Q: A spot Instance with a defined duration (also known as a ____ ____ ) is designed not to be interrupted and will run continuously for the duration you select (1 to 6 hours).
+152 A: Spot block
+
+153 Q: A ____ ____ is a collection of spot instances and, optionally, on-demand instances.
+153 A: Spot fleet
+
+154 Q: T or F: In a spot fleet, all instances must be from the same family.
+154 A: F. You can have a mix of instance types (different families, different sizes).
 
