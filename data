@@ -460,3 +460,13 @@
 154 Q: T or F: In a spot fleet, all instances must be from the same family.
 154 A: F. You can have a mix of instance types (different families, different sizes).
 
+155 Q: What AWS service provides configuration managements, helping you configure and operate applications by using Puppet or Chef?
+155 A: OpsWorks
+
+156 Q: What are the three OpsWorks services?
+156 A: AWS OpsWorks for Puppet Enterprise, AWS OpsWorks for Chef Automate, AWS OpsWorks Stacks
+
+157 Q: Which OpsWorks service provides a way to manage groups of AWS resources?
+157 A: OpsWorks Stacks
+
+
