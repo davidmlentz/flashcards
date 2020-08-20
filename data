@@ -469,4 +469,26 @@
 157 Q: Which OpsWorks service provides a way to manage groups of AWS resources?
 157 A: OpsWorks Stacks
 
+158 Q: T or F: OpsWorks for Puppet Enterprise lets you create AWS-managed Puppet master servers.
+158 A: T
 
+159 Q: T or F: With OpsWorks for Puppet Enterprise, you can automate configuration of on-premise infrastructure.
+159 A: T
+
+160 Q: T or F: With OpsWorks for Chef Automate, you can automate configuration of on-premise infrastructure.
+160 A: T
+
+161 Q: T or F: OpsWorks Stacks can manage autoscaling.
+161 A: T. OpsWorks Stacks lets you set automatic scaling for your servers based on preset schedules or in response to changing traffic levels.
+
+162 Q: This AWS service uses the Chef solo client installed on an EC2 instances to run recipes and automate tasks such as installing packages and programming languages or frameworks, and configuring software.
+162 A: AWS OpsWorks Stack.
+
+163 Q: T or F: OpsWorks Stacks supports on-premises servers.
+163 A: T. OpsWorks Stacks supports all Linux machines that can install the OpsWorks Stacks agent and have connection to AWS public endpoints.
+
+164 Q: T or F: You can use EC2 user data to customize instance setup in an OpsWorks Stack.
+164 A: F. Instance setup is done exclusively through Chef recipes.
+
+165 Q: T or F: You can connect an on-premises server to your OpsWorks for Chef Automate server.
+165 A: T. You can connect any EC2 instance or on-premises server that is running a supported operating system and has Internet access to an OpsWorks for Chef Automate server. You are charged an hourly fee for every connected resource.
