@@ -492,3 +492,8 @@
 
 165 Q: T or F: You can connect an on-premises server to your OpsWorks for Chef Automate server.
 165 A: T. You can connect any EC2 instance or on-premises server that is running a supported operating system and has Internet access to an OpsWorks for Chef Automate server. You are charged an hourly fee for every connected resource.
+
+166 Q: What are the four targets to which CodeDeploy can deploy?
+166 A: EC2, ASG, ECS, and Lambda
+
+
