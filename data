@@ -519,3 +519,81 @@
 
 174 Q: What CloudFormation feature prevents accidental updates and deletes to stack resources?
 174 A: Stack Policies
+
+175 Q: T or F: AWS Service Catalog can integrate w/self-service portals like ServiceNow.
+175 A: T.
+
+176 Q: SAM can use _____ to deploy Lambda functions (traffic shifting).
+176 A: CodeDeploy
+
+177 Q: T or F: OpsWorks can manage an ASG.
+177 A: F
+
+178 Q: T or F: AWS Systems Manager can manage both EC2 and on-premise servers.
+178 A: T.
+
+179 Q: T or F: AWS Systems Manager is agent-less.
+179 A: F. It has an agent—which is included in the Amazon Linux AMIs. EC2 instances require a proper IAM role to allow SSM actions.
+
+180 Q: Where does Lambda store temporary data?
+180 A: /tmp Up to 512 MB
+
+181 Q: How much temporary data can a Lambda function store?
+181 A: 512 MB. Stores it in /tmp
+
+182 Q: What is the Lambda deployment package size limit?
+182 A: 250 MB. Including layers. Everything you upload for a Lambda funtion must be <= 250 MB.
+
+183 Q: What is the default number of Lambda functions that can run concurrently?
+183 A: 1000. Soft limit that can be increased.
+
+184 Q: What AWS service allows you to centralize operational data from multiple AWS services and automate tasks across your AWS resources.
+184 A: AWS Systems Manager. You can select a resource group and view its recent API activity, resource configuration changes, related notifications, operational alerts, software inventory, and patch compliance status. It provides a central place to view and manage your AWS resources, so you can have complete visibility and control over your operations.
+
+185 Q: Which operating systems does AWS Systems Manager support?
+185 A: Linux and Windows
+
+186 Q: Does AWS Systems Manager manage instances running on-premises?
+186 A: Yes. (And also EC2 instances.)
+
+187 Q: An AWS Systems Manager _____ defines a series of actions that allows you to remotely manage instances, ensure desired state, and automate operations.
+187 A: document. You can use Systems Manager documents with run command, state manager, or automation features.
+
+188 Q: Can I connect my ServiceNow and Jira Service Desk instances to AWS Systems Manager?
+188 A: Yes.
+
+189 Q: _____ is a Systems Manager capability that provides a central location where you can view, investigate, and resolve operational issues related to your environment.
+189 A: OpsCenter. OpsCenter aggregates and standardizes operational issues, referred to as OpsItems, while providing contextually relevant data that helps with diagnosis and remediation. Information includes Config changes, AWS CloudTrail logs, resource description, AWS CloudWatch alarms, related OpsItems, and related resources.
+
+190 Q: A Systems Manager _____ is an AWS resource-related operational event which needs a user’s attention, investigation and/or resolution.
+190 A: Opsitem. It could be a resource-related failure, a maintenance notification, security alert, or a performance issue. An Opsitem includes relevant information that aids with investigation and resolution of the underlying event.
+
+191 Q: AWS _____ is a feature of AWS Systems Manager that allows you to quickly validate and roll out configurations across an application of any size—whether hosted on EC2, containers, Lambda, mobile apps, or IoT devices—in a controlled and monitored way. 
+191 A: AppConfig. You can use an AppConfig Validator (a schema or a Lambda function) to validate configuration data to make sure it is syntactically and semantically correct according to your definitions before deploying it to your application. AppConfig allows you to follow deployment best practices by rolling out configuration at a pace that you define while monitoring for errors.
+
+192 Q: If you need to model a complex set of application configurations that you can validate and deploy safely in a controlled environment, with ability to rollback changes under certain conditions, you should use _____. 
+192 A: AWS AppConfig.
+
+193 Q: Systems Manager _____ allows you to build and share standardized operational playbooks to execute scripts, get approvals, cal AWS APIs, or run commands on your Amazon EC2 instances. 
+193 A: Automation. It supports PowerShell Core and Python3 scripts.
+
+194 Q: AWS Systems Manager _____ _____ provides you safe, secure remote management of your instances at scale without logging into your servers, replacing the need for bastion hosts, SSH, or remote PowerShell. 
+194 A: Run Command. It provides a simple way of automating common administrative tasks across groups of instances such as registry edits, user management, and software and patch installations. You can act against large groups of instances by targeting using tag based queries. You can propagate changes safely across your environments by setting up rate control, which allows you to specify simultaneous execution batches with error thresholds.
+
+195 Q: AWS Systems Manager _____ _____ is a fully-managed service that provides you with an interactive browser-based shell and CLI experience. 
+195 A: Session Manager. It helps provide secure and auditable instance management without the need to open inbound ports, maintain bastion hosts, and manage SSH keys.
+
+196 Q: AWS Systems Manager _____ _____  helps you select and deploy operating system and software patches automatically across large groups of Amazon EC2 or on-premises instances. 
+196 A: Patch Manager. Through patch baselines, you can set rules to auto-approve select categories of patches to be installed. You can also schedule maintenance windows for your patches so that they are only applied during preset times.
+
+197 Q: AWS Systems Manager _____ _____ let you define a schedule for when to perform potentially disruptive actions on your instances such as patching an operating system, updating drivers, or installing software or patches.
+197 A: Maintenance Windows. You can schedule any AWS Systems Manager Run Command execution, AWS Systems Manager Automation Document execution, AWS Step Functions, or AWS Lambda functions as tasks.
+
+198 Q: _____ is an AWS Systems Manager feature that enables you to securely store and distribute software packages in your organization.
+198 A: Distributor
+
+199 Q: AWS Systems Manager _____ _____ is a secure and scalable configuration management service that automates the process of keeping your Amazon EC2 and hybrid infrastructure in a state that you define.
+199 A: State Manager. You can bootstrap instances, download/update agents, configure network settings, patch instances, run scripts, and join instances to a Windows domain.
+
+200 Q: AWS Systems Manager _____ _____ provides secure, hierarchical storage for configuration data management and secrets management. 
+2000 A: Parameter Store. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.
