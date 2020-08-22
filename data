@@ -503,7 +503,7 @@
 168 A: 128 MB and 3 GB.
 
 169 Q: What is the max timeout for a Lambda function?
-169 Q: 15 minutes
+169 A: 15 minutes
 
 170 Q: By default, CodeDeploy waits how long after a successful deployment before it terminates the original task set?
 170 A: One hour. You can use the AWS CodeDeploy console to shorten this interval.
