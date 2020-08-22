@@ -496,4 +496,26 @@
 166 Q: What are the four targets to which CodeDeploy can deploy?
 166 A: EC2, ASG, ECS, and Lambda
 
+167 Q: What are the six runtimes Lambda supports?
+167 A: Node.js, Python, Ruby, Java, Go, .NET
 
+168 Q: What is the minimum and maximum amount of RAM you can allocate to a Lamba function?
+168 A: 128 MB and 3 GB.
+
+169 Q: What is the max timeout for a Lambda function?
+169 Q: 15 minutes
+
+170 Q: By default, CodeDeploy waits how long after a successful deployment before it terminates the original task set?
+170 A: One hour. You can use the AWS CodeDeploy console to shorten this interval.
+
+171 Q: What are the three values you can choose for a CloudFormation DeletionPolicy?
+171 A: Retain, Snapshot, and Delete. (Delete is the default.)
+
+172 Q: What are the 6 CloudFormation resources on which you can apply a DeletionPolicy of "Snapshot?"
+172 A: EBS volume, ElastiCache cluster, ElastiCache ReplicationGroup, RDS DBInstance, RDS DBCluster, Redshift Cluster
+
+173 Q: What CloudFormation feature lets you deploy a CloudFormation stack across multiple accounts and regions?
+173 A: StackSets
+
+174 Q: What CloudFormation feature prevents accidental updates and deletes to stack resources?
+174 A: Stack Policies
