@@ -205,7 +205,7 @@
 69 Q: T or F: All current generation instances support jumbo frames.
 69 A: T
 
-70 Q: VPN connections and traffic sent over an Internet gateway can use jumbo frames.
+70 Q: T or F: VPN connections and traffic sent over an Internet gateway can use jumbo frames.
 70 A: F. VPN connections and traffic sent over an Internet gateway are limited to 1500 MTU.
 
 71 Q: T or F: You cannot use jumbo frames for traffic between your VPCs and your on-premises networks over AWS Direct Connect.
@@ -406,7 +406,7 @@
 136 Q: T or F: Elastic Beanstalk supports Go.
 136 A: T.
 
-137 Q: T or F: Elastic Beanstalk supports Jav.
+137 Q: T or F: Elastic Beanstalk supports Java.
 137 A: T. Java SE and Java w/Tomcat
 
 138 Q: T or F: Elastic Beanstalk supports .NET.
@@ -574,7 +574,7 @@
 192 Q: If you need to model a complex set of application configurations that you can validate and deploy safely in a controlled environment, with ability to rollback changes under certain conditions, you should use _____. 
 192 A: AWS AppConfig.
 
-193 Q: Systems Manager _____ allows you to build and share standardized operational playbooks to execute scripts, get approvals, cal AWS APIs, or run commands on your Amazon EC2 instances. 
+193 Q: Systems Manager _____ allows you to build and share standardized operational playbooks to execute scripts, get approvals, call AWS APIs, or run commands on your Amazon EC2 instances. 
 193 A: Automation. It supports PowerShell Core and Python3 scripts.
 
 194 Q: AWS Systems Manager _____ _____ provides you safe, secure remote management of your instances at scale without logging into your servers, replacing the need for bastion hosts, SSH, or remote PowerShell. 
@@ -596,4 +596,154 @@
 199 A: State Manager. You can bootstrap instances, download/update agents, configure network settings, patch instances, run scripts, and join instances to a Windows domain.
 
 200 Q: AWS Systems Manager _____ _____ provides secure, hierarchical storage for configuration data management and secrets management. 
-2000 A: Parameter Store. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.
+200 A: Parameter Store. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.
+
+201 Q: A call to API Gateway times out after how long?
+201 A: 29 seconds
+
+202 Q: What is the max payload size of a request to API Gateway?
+202 A: 10 MB
+
+203 Q: T or F: You can expose an AWS service API as an API Gateway endpoint?
+203 A: T. Any AWS service. This way you can add caching, auth, rate limiting, API keys, etc.
+
+204 Q: What is the default TTL on the API Gateway cache?
+204 A: 300 seconds
+
+205 Q: What is the max TTL on the API Gateway cache?
+205 A: 3600 seconds
+
+206 Q: T or F: You can configure the API Gateway cache per method.
+206 A: T. You can override stage-level cache settings by enabling or disabling caching for a specific method. By increasing or decreasing its TTL period; or by turning encryption on or off for cached responses.
+
+207 Q: T or F: A client making a request to an API Gateway endpoint can include a header to bypass the cache?
+207 A: T, if the client has proper IAM permissions.
+
+208 Q: T or F: the API Gateway cache size is configurable?
+208 A: T. From .5 GB minimum to 237 GB max size.
+
+209 Q: What does a 429 error returned by API Gateway mean?
+209 A: Quota exceeded/throttled
+
+210 Q: What does a 403 error returned by API Gateway mean?
+210 A: WAF filtered or access denied
+
+211 Q: What does a 504 error returned by API Gateway mean?
+211 A: Integration failure e.g., API Gateway timeout (> 29 seconds)
+
+212 Q: T or F: You can point a Route 53 CNAME to an API Gateway endpoint .
+212 A: T.
+
+213 Q: By default, does a Lambda function operate inside or outside of a VPC?
+213 A: Outside. You can optionally launch a Lambda function inside your VPC. If you do, it'll get an ENI and an associate security group.
+
+214 Q: CLI, SDK, API Gateway invoke Lambda functions synchronously/asynchronously/via event source mapping?
+214 A: synchronously
+
+215 Q: CloudWatch Events, S3, SNS invoke Lambda functions synchronously/asynchronously/via event source mapping?
+215 A: asynchronously
+
+216 Q: Kinesis data streams, SQS, DynamoDB streams invoke Lambda functions synchronously/asynchronously/via event source mapping?
+216 A: via event source mapping
+
+217 Q: Instead of sending the output (and error messages) from your Lambda functions to DLQs, Amazone recommends sending them to _____.
+217 A: Destinations
+
+218 Q: T or F: Cross-zone load balancing is enabled by default on an NLB.
+218 A: F. You can enable it and you WILL get charged for inter-AZ traffic.
+
+219 Q: T or F: Cross-zone load balancing is enabled by default on an ALB.
+219 A: T. It's always on. You can't disable it. And you don't get charged for inter-AZ traffic.
+
+220 Q: T or F: Cross-zone load balancing is enabled by default on a CLB.
+220 A: F. You can enable it and you WON'T get charged for inter-AZ traffic.
+
+221 Q: T or F: ALB supports web sockets.
+221 A: T. ALB supports HTTP, HTTP/2, HTTPS, and web sockets
+
+222 Q: T or F: NLB supports web sockets.
+222 A: F. NLB supports TCP, TLS, and UDP.
+
+223 Q: T or F: By default, CloudFront doesn’t consider cookies when processing requests and responses, or when caching your objects in edge locations.
+223 A: T.
+
+224 Q: T or F: S3 doesn't process cookies.
+224 A: T
+
+225 Q: T or F: By default, CloudFront doesn't consider headers when caching your objects in edge locations. 
+225 A: T
+
+226 Q: T or F: If a file in an edge location isn't frequently requested, CloudFront might evict the file
+226 A: T
+
+227 Q: T or F: Amazon recommends that you use the Expires header field instead of the Cache-Control max-age directive to control object caching.
+227 A: F. Amazon recommendsd that you use the Cache-Control max-age directive instead of the Expires header field to control object caching.
+
+228 Q: T or F: If you specify values both for Cache-Control max-age and for Expires, CloudFront uses only the value of Expires.
+228 A: F. If you specify values both for Cache-Control max-age and for Expires, CloudFront uses only the value of Cache-Control max-age.
+
+229 Q: T or F: By default, interface endpoint connection requests must be manually accepted. 
+229 A: T.
+
+230 Q: T or F: You can use Direct Connect for a connection between an interface endpoint and your on-premises data center.
+230 A: T.
+
+231 Q: T or F: You can use AWS Site-to-Site VPN for a connection between an interface endpoint and your on-premises data center.
+231 A: T.
+
+232 Q: Which type of DNS record maps a hostname to a hostname?
+232 A: CNAME
+
+233 Q: Which type of Route 53 record lets you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets.
+233 A: Alias
+
+234 Q: T or F: You can create a Route 53 alias record to point to a zone apex.
+234 A: T.
+
+235 Q: T or F: You can create a Route 53 CNAME record to point to a zone apex.
+235 A: F.
+
+236 Q: Which type of Route 53 record is a host-to-IPv4 mapping?
+236 A: A record.
+
+237 Q: Which type of Route 53 record is a host-to-IPv6 mapping? 
+237 A: AAAA record.
+
+238 Q: T or F: You can create a health check on a Route 53 simple routing policy.
+238 A: F. A Route 53 simple routing policy does not support health checks.
+
+239 Q: If a Route 53 simple routing policy returns multiple values, how does the client choose which one to use?
+239 A: Randomly
+
+240 Q: T or F: You can create a health check on a Route 53 weighted routing policy.
+240 A: T.
+
+241 Q: T or F: You can create a health check on a Route 53 latency routing policy.
+241 A: T. It can failover to route traffic to an alternate server if the one w/the lowest latency is unavailable.
+
+242 Q: T or F: You can create a default server when you use a Route 53 geolocation routing policy.
+242 A: T. And you should.
+
+243 Q: T or F: You can nest Route 53 policies of different routing types.
+243 A: T.
+
+244 Q: T or F: You can create a health check on a Route 53 weighted multi-value policy.
+244 A: T. 
+
+245 Q: What's the max number of records a Route 53 multi value query can return?
+245 A: 8
+
+246 Q: T or F: you can use Route 53 as a private DNS service?
+246 A: T
+
+247 Q: You need to enable the VPC settings for enableDnsHostNames and enableDnsSupport in order to use Route 53 as a ______ DNS.
+247 A: private
+
+248 Q: T or F: Route 53 supports DNSSEC.
+248 A: F. Route 53 supports DNSSEC for domain registration, but not for DNS service. You need to set up a custom DNS service w/PoerDNS, Bind, etc.
+
+249 Q: T or F: you can use Route 53 as a DNS provider for a domain name you bought with a different registrar?
+249 A: T.
+
+
+
