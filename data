@@ -745,5 +745,31 @@
 249 Q: T or F: you can use Route 53 as a DNS provider for a domain name you bought with a different registrar?
 249 A: T.
 
+250 Q: T or F: An EBS volume can be linked to more than one EC2 instance.
+250 A: F.
+
+251 Q: T or F: You can move an EBS volume from one AZ to another.
+251 A: F. You can take a snapshot, create an instance in the new AZ and add an EBS volume to that instance from the snapshot.
+
+252 Q: What's the minimum size of a GP2 EBS volume?
+252 A: 1 GB
+
+253 Q: GP2 IOPS = ____ IOPS/GB.
+253 A: 3 IOPS/GB
+
+254 Q: GP2 minimum IOPS = ____ IOPS.
+254 A: 100 IOPS
+
+255 Q: GP2 maximum IOPS = ____ IOPS.
+255 A: 16000 IOPS
+
+256 Q: GP2 - you gain ____ IOPS for each TB of space you add to the drive.
+256 A: 3000 IOPS (up to the GP2 max throughput of 16000 IOPS)
+
+257 Q: What's the minimum size of an iO1 (provisioned IOPS) EBS volume?
+257 A: 4 GB
+
+258 Q: T or F: The IOPS available to an i01 EBS volume is a function of the volume's size?
+258 A: F. For an i01 (provisioned IOPS) volume, size of volume and IOPS are independent.
 
 
