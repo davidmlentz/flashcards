@@ -772,4 +772,100 @@
 258 Q: T or F: The IOPS available to an i01 EBS volume is a function of the volume's size?
 258 A: F. For an i01 (provisioned IOPS) volume, size of volume and IOPS are independent.
 
+259 Q: T or F: If you reboot an EC2 instance backed by an instance-store volume, you will lose your data.
+259 A: F. You can reboot. You can't stop. "The data on an instance store volume persists only during the lifetime of its associated instance. If an instance reboots (intentionally or unintentionally), data on the instance store volumes will persist."
+
+260 Q: T or F: EBS volumes restored by snapshots need to be pre-warmed.
+260 A: T. Use fio or dd commands to read the entire volume.
+
+261 Q: Which AWS service provides a simple, automated way to back up data stored on Amazon EBS volumes?
+261 A: Amazon Data Lifecycle Manager (DLM) for EBS Snapshots. You can define backup and retention schedules for EBS snapshots by creating lifecycle policies based on tags. With this feature, you no longer have to rely on custom scripts to create and manage your backups.
+
+262 Q: T or F: You cannot resize an instance store volume once it's created.
+262 A: T.
+
+263 Q: T or F: EFS works with Windows and Linux.
+263 A: F. EFS works only with Linux (POSIX-compliant).
+
+264 Q: What filesystem protocol does EFS use?
+264 A: NFS.
+
+265 Q: To connect your Amazon EFS file system to your Amazon EC2 instance, you must create two ____ ____: one for your Amazon EC2 instance and another for your Amazon EFS mount target.
+265 A: security groups. The security groups you associate with a mount target must allow inbound access for the TCP protocol on the NFS port (2049) from all EC2 instances on which you want to mount the file system. Each EC2 instance that mounts the file system must have a security group that allows outbound access to the mount target on the NFS port (2049).
+
+266 Q: T or F: EC2 instances running in multiple Availability Zones within the same Region can access the same EFS file system.
+266 A: T.
+
+267 Q: T or F: All EC2 instances in an Availability Zone share the same mount target.
+267 A: T.
+
+268 Q: T or F: An Amazon EFS file system can only have mount targets in one VPC at a time.
+268 A: T.
+
+269 Q: T or F: You can mount an EFS file system on your on-premises data center server if you're connected to your VPC with Direct Connect or Site-to-Site VPN.
+269 A: T.
+
+270 Q: To access Amazon EFS from an on-premises server, add a rule to your mount target ____ ____ to allow inbound traffic to the NFS port (2049) from your on-premises server.
+270 A: security group
+
+271 Q: T or F: When mounting an EFS file system, you can use either the IP address or the DNS name in your mount command.
+271 A: T.
+
+272 Q: In order to use S3 replication, you must enable ____.
+272 A: Versioning
+
+273 Q: What AWS service allows you to use simple SQL expressions to pull out only the bytes you need from an S3 object?
+273 A: S3 Select. Athena, Redshift, and EMR all support S3 Select.
+
+274 Q: What AWS service allows you to use simple SQL expressions to pull out only the bytes you need from a Glacier object?
+274 A: Glacier Select
+
+275 Q: Are S3 Event Notifications synchronous or asynchronous?
+275 A: Asynchronous. S3 typically delivers event notifications in seconds, but it can take a minute or longer.
+
+276 Q: If multiple simultaneous write occur on an S3 object, only one Event Notification will be sent. You can prevent this and ensure a notification for each write by enabling ____.
+276 A: Versioning
+
+277 Q: T or F: CloudTrail records S3 bucket-level activity by default?
+277 A: T
+
+278 Q: T or F: CloudTrail records S3 object-level activity by default?
+278 A: F
+
+279 Q: S3 write performance (PUT/COPY/POST/DELETE): ____ per second per prefix.
+279 A: 3500
+
+280 Q: S3 write performance (PUT/COPY/POST/DELETE): 3500/second per ____. 
+280 A: prefix
+
+281 Q: S3 read performance (GET/HEAD): ____ per second per prefix.
+281 A: 5500
+
+282 Q: S3 read performance (GET/HEAD): 5500/second per ____.
+282 A: prefix
+
+283 Q: S3 multipart upload is required for objects larger than ____.
+283 A: 5 GB
+
+284 Q: T or F: CloudFront allows you to restrict access to certain geographies.
+284 A: T. Geo Restriction allows you to whitelist or blacklist by country
+
+285 Q: T or F: A signed URL gives you access to only a single file.
+285 A: T.
+
+286 Q: T or F: A signed cookie gives you access to only a single file.
+286 A: F. Gives you access to multiple files.
+
+287 Q: T or F: CloudFront supports zone apex.
+287 A: T. You can point mydomain.com to a cloudfront distribution
+
+288 Q: What is the minimum TTL for a CloudFront cache?
+288 A: 0 seconds (disabled)
+
+289 Q: What is the maximum TTL for a CloudFront cache?
+289 A: 1 year
+
+290 Q: What are the CloudFront headers that set the value of the object's TTL?
+290 A: Expires and Cache-Control
+
 
