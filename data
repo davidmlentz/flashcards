@@ -328,7 +328,7 @@
 110 Q: _____ is an open source, non-relational (columnar), distributed database.
 110 A: HBase
 
-111 Q: T or F: Data stored on HDFS in an EMR cluster is ephemeral is persistent.
+111 Q: T or F: Data stored on HDFS in an EMR cluster is persistent.
 111 A: F. Data stored on HDFS in an EMR cluster is ephemeral so it will be deleted when a cluster is terminated.
 
 112 Q: What are the 3 types of nodes in an EMR cluster?
@@ -349,7 +349,7 @@
 117 Q: T or F: both Redis and Memcached can use multiple nodes.
 117 A: F. Redis data structures cannot be horizontally sharded. As a result, Redis ElastiCache clusters are always a single node, rather than the multiple nodes we saw with Memcached.
 
-118 Q: T or F: Elasticache Redis supports read repicas.
+118 Q: T or F: Elasticache Redis supports read replicas.
 118 A: T. Redis supports replication...primary node can have one or more replica nodes. A Redis primary node can handle both reads and writes from the app. Redis replica nodes can only handle reads.
 
 119 Q: T or F: Elasticache Redis supports encryption at rest and in transit.
@@ -868,4 +868,131 @@
 290 Q: What are the CloudFront headers that set the value of the object's TTL?
 290 A: Expires and Cache-Control
 
+291 Q: What's the max object size in DynamoDB?
+291 A: 400 KB
 
+292 Q: T or F: DynamoDB supports transactions across multiple tables (ACID support).
+292 A: T.
+
+293 Q: T or F: A DynamoDB local secondary index must be defined at table creation time.
+293 A: T.
+
+294 Q: T or F: A DynamoDB local secondary index has the same partition key as the base table.
+294 A: T. It uses a different sort key.
+
+295 Q: T or F: A DynamoDB global secondary index must be defined at table creation time.
+295 A: F. You can create a GSI after you've created your table.
+
+296 Q: T or F: A DynamoDB global secondary index has the same partition key as the base table.
+296 A: F.
+
+297 Q: T or F: You can create a TTL on an item in a DynamoDB table.
+297 A: T. Amazon DynamoDB Time to Live (TTL) allows you to define a per-item timestamp to determine when an item is no longer needed. Shortly after the date and time of the specified timestamp, DynamoDB deletes the item from your table without consuming any write throughput.
+
+298 Q: What is the name of the DynamoDB feature that reacts to changes on a table in real time?
+298 A: DynamoDB Streams
+
+299 Q: To use DynamoDB Global Tables, you must enable ____ ____.
+299 A: DynamoDB Streams
+
+300 Q: What is the name of the DynamoDB feature that provides real time cross-region replication?
+300 A: DynamoDB Global Tables. It's active-active, so a change made on the table in any region is replicated. 
+
+301 Q: How long is data retained in DynamoDB Streams?
+301 A: 24 hours
+
+302 Q: What AWS service is a fully managed, highly available, in-memory cache for Amazon DynamoDB?
+302 A: DynamoDB Accelerator (DAX)
+
+303 Q: If your application already works with DynamoDB, does implementing DAX require code changes?
+303 A: No
+
+304 Q: What is the default TTL in DAX?
+304 A: 5 minutes
+
+305 Q: What open source database is similar to DynamoDB?
+305 A: Apache Cassandra
+
+306 Q: T or F: RDS is backed by EBS storage.
+306 A: T. You can choose GP2 or IO1.
+
+307 Q: What RDS feature uses the Amazon Simple Notification Service (Amazon SNS) to provide notification when an Amazon RDS event occurs?
+307 A: RDS Event Notification
+
+308 Q: T or F: RDS multi-AZ replication is synchronous.
+308 A: T.
+
+309 Q: T or F: In an RDS multi-AZ architecture, failover to the standby is automated.
+309 A: T.
+
+310 Q: What RDS feature uses a standby instance for failover in case of outage?
+310 A: Multi-AZ
+
+311 Q: T or F: RDS Read Replica replication is synchronous.
+311 A: F. Async.
+
+312 Q: T or F: An RDS Read Replica can be in a different region than the master.
+312 A: T. Cross-region read replicas are possible in RDS.
+
+313 Q: T or F: RDS uses IAM to authorize users for database operations.
+313 A: F. IAM for authentication, but you need to manage authorization yourself.
+
+314 Q: T or F: You can use CloudTrail to track queries made in an RDS database.
+314 A: F.
+
+315 Q: What is the max size for an Aurora database?
+315 A: 64 TB
+
+316 Q: T or F: Aurora is multi-AZ by default.
+316 A: T.
+
+317 Q: Aurora uses a single ____ ____ to load balance requests to all read replicas.
+317 A: reader endpoint
+
+318 Q: What Aurora feature gives you cross-region read replication with up to 5 read-only regions, sub 1-second lag, and an RTO < 1 minute?
+318 A: Aurora Global Database
+
+319 Q: T or F: Aurora can import/export directly to/from S3 w/o using a client application
+319 A: T.
+
+320 Q: What Aurora feature gives you automated database instantiation and autoscaling based on actual use?
+320 A: Aurora Serverless
+
+321 Q: What Aurora feature provides HA by making all nodes RW (rather than 1 master doing RW and a bunch of read replicas)?
+321 A: Aurora Multi-master
+
+322 Q: What is the maximum execution time of a Step Functions workflow?
+322 A: 1 year.
+
+323 Q: T or F: Step Functions supports a human approval step?
+323 A: T.
+
+324 Q: What AWS service is a serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services?
+324 A: AWS Step Functions
+
+325 Q: T or F: Step Functions integrates natively with Mechanical Turk.
+325 A: F. Use SWF instead.
+
+326 Q: T or F: SWF integrates natively with Mechanical Turk.
+326 A: T.
+
+327 Q: T or F: SWF code runs on EC2 instances.
+327 A: T. It's not serverless. Step Functions is the newer, better way of doing things and SWF is recommended only if you need to integrate with Mechanical Turk, or if you need external signals to intervene in your proces, or if you need child processes that return values to their parent process.
+
+328 Q: What is the max size of an SQS message?
+328 A: 256 KB
+
+329 Q: What AWS service is well suited to serve as a write buffer for DynamoDB?
+329 A: SQS
+
+330 Q: What is the throughput limit on a SQS FIFO queue when messages are batched?
+330 A: 3000 messages per second
+
+331 Q: What is the throughput limit on a SQS FIFO queue when messages are not batched?
+331 A: 300 messages per second
+
+332 Q: You can use ____ ____ ____ to configure an AWS Lambda function to process messages from an SQS queue.
+332 A: Event source mapping. This supports standard and FIFO queues. Uses long polling. You can specify a number of messages to include in the batch.
+
+333 Q: You can configure a dead letter queue (DLQ) to receive notification if Lambda can't process messages from an SQS queue. Do you set up the DLQ on SQS or on Lambda?
+333 A: SQS. You can set up a DLQ on Lambda, but it's for async Lambda invocations.
