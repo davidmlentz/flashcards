@@ -996,3 +996,84 @@
 
 333 Q: You can configure a dead letter queue (DLQ) to receive notification if Lambda can't process messages from an SQS queue. Do you set up the DLQ on SQS or on Lambda?
 333 A: SQS. You can set up a DLQ on Lambda, but it's for async Lambda invocations.
+
+334 Q: Which AWS service is a massively scalable and durable real-time data streaming service?
+334 A: Kinesis Data Streams
+
+335 Q: Which AWS service allows you to transform and analyze streaming data in real time with Apache Flink, or using your own custom SQL code? 
+335 A: Kinesis Data Analytics
+
+336 Q: Which AWS service allows you to load streaming data into data lakes, data stores, and analytics services?
+336 A: Kinesis Data Firehose. It is a fully managed service for delivering real-time streaming data to destinations such as S3, Redshift, Amazon ES, Splunk, and custom HTTP/s endpoints. 
+
+337 Q: Which Kinesis service organizes data into shards?
+337 A: Kinesis Data Streams
+
+338 Q: What is the default data retention of Kinesis Data Streams?
+338 A: 24 hours
+
+339 Q: What is the max data retention of Kinesis Data Streams?
+339 A: 7 days
+
+340 Q: T or F: Kinesis Data Streams can replay its data.
+340 A: T. Up until it expires, you can replay/reprocess the data in a Kinesis Data Streams shard.
+
+341 Q: T or F: Only one consumer can read from a Kinesis Data Stream at a time.
+341 A: F. Multiple applications can consume the same stream. This differs from SQS, where a message is deleted from the queue once a consumer reads it.
+
+342 Q: T or F: Once data is inserted into Kinesis Data Streams, it can't be removed.
+342 A: T. Data in Kinesis Data Streams is immutable. (It expires and gets deleted, but you can't take an action to delete a record.)
+
+343 Q: T or F: Records within a Kinesis Data Stream shard are ordered.
+343 A: T. When you read records from a shard, Kinesis will return records ordered by the sequence number. You have an ordering guarantee at the shard level, but not across shards.
+
+344 Q: T or F: You can increase the throughput of your Kinesis Data Stream by adding more shards.
+344 A: T. Resharding. You pay per shard, though, so this also increased your costs. You can reshard or merge (reduce the number of shards) at any time.
+
+345 Q: What is the throughput (MB/s) of a Kinesis Data Streams producer writing to a single shard?
+345 A: 1 MB/s
+
+346 Q: How many messages per second can a Kinesis Data Streams producer write to a single shard?
+346 A: 1000 messages per second per shard.
+
+347 Q: What is the error Kinesis Data Streams emits if you write more than 1 MB/s or 1000 messages/s to a single shard?
+347 A: ProvisionedThroughputException
+
+348 Q: What does it mean when Kinesis Data Streams outputs a ProvisionedThroughputException?
+348 A: You've tried to write more than 1 MB/s or 1000 messages/s to a single shard. You should add shards.
+
+349 Q: ____ ____ is an Amazon Kinesis Data Streams feature that enables consumers to receive records from a data stream with dedicated throughput of up to 2 MB of data per second per shard.
+349 A: Enhanced fan-out
+
+350 Q: Without using enhanced fan-out, a Kinesis Data Streams consumer can read at how many MB/s across all shards?
+350 A: 2 MB/s across all shards. Using enhanced fan-out: 2 MB/s per shard.
+
+351 Q: What are the four services Kinesis Firehose can load data into?
+351 A: Redshift, S3, ElasticSearch, Splunk
+
+352 Q: What are the five sources of data that can write into a Kinesis Data Firehose?
+352 A: KPL, Kinesis Agent, Kinesis Data Streams, CloudWatch Logs/CloudWatch Events, IOT Rule Actions.
+
+353 Q: What are the four destinations for Kinesis Data Firehose?
+353 A: S3, Redshift, ElasticSearch, Splunk
+
+354 Q: What is the minimum buffer time you can set for Kinesis Data Firehose?
+354 A: 1 minute
+
+355 Q: T or F: Kinesis Data Firehose is fully managed and Kinesis Data Streams is not.
+355 A: T.
+
+356 Q: T or F: Kinesis Data Firehose features automated scaling.
+356 A: T.
+
+357 Q: T or F: Kinesis Data Firehose can store data for up to 7 days.
+357 A: F. Kinesis Data Firehose does not store data. Kinesis Data Streams stores data for 24 hours by default but you can change this to a maximum of 7 days.
+
+358 Q: Kinesis Data Analytics can read from both Kinesis Data Streams and Kinesis Data Firehose.
+358 A: T. Both Kinesis Data Streams and Kinesis Data Firehose can be input streams to Kinesis Data Analytics.
+
+359 Q: Kinesis Data Analytics can output to both Kinesis Data Streams and Kinesis Data Firehose.
+359 A: T. Both Kinesis Data Streams and Kinesis Data Firehose can be output streams from Kinesis Data Analytics.
+
+360 Q: T or F: Kinesis Data Analytics can read its data source and understand the data structure.
+360 A: T. Schema discovery.
