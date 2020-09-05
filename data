@@ -796,7 +796,7 @@
 266 Q: T or F: EC2 instances running in multiple Availability Zones within the same Region can access the same EFS file system.
 266 A: T.
 
-267 Q: T or F: All EC2 instances in an Availability Zone share the same mount target.
+267 Q: T or F: Re: EFS, all EC2 instances in an Availability Zone share the same mount target.
 267 A: T.
 
 268 Q: T or F: An Amazon EFS file system can only have mount targets in one VPC at a time.
@@ -1119,5 +1119,44 @@
 
 374 Q: T or F: You can optionally use BGP with Direct Connect.
 374 A: F. You must use BGP when you use Direct Connect.
+
+375 Q: What three protocols does the NLB use?
+375 A: TCP, UDP, TLS
+
+376 Q: What two protocols does the ALB use?
+376 A: HTTP, HTTPS
+
+377 Q: T or F: ALB supports SNI.
+377 A: T
+
+378 Q: T or F: NLB supports SNI.
+378 A: T
+
+379 Q: T or F: ALB supports sticky sessions.
+379 A: T
+
+380 Q: T or F: NLB supports sticky sessions.
+380 A: T
+
+381 Q: T or F: You can assign a static IP to an ALB.
+381 A: F
+
+382 Q: T or F: You can assign a static IP to an NLB.
+382 A: T
+
+383 Q: T or F: You can assign an elastic IP to an ALB.
+383 A: F
+
+384 Q: T or F: You can assign an elastic IP to an NLB.
+384 A: T
+
+385 Q: If you don't use Amazon Cognito, then you must write code that interacts with a web IdP, such as Facebook, and then calls the ____ API to trade the authentication token you get from those IdPs for AWS temporary security credentials.
+385 A: AssumeRoleWithWebIdentity. This is web identity federation. This way, you don't need to create custom sign-in code or manage your own user identities. Facebook, Google, et. al. are OpenID Connect compatible (OIDC). Using Cognito is preferred over using AssumeRoleWithWebIdentity.
+
+386 Q: A ____ ____ is an entity in IAM that describes an external identity provider (IdP) service that supports the SAML 2.0 standard.
+386 A: SAML provider / SAML identity provider. IAM SAML identity providers are used as principals in an IAM trust policy.
+
+387 Q: You use a ____ ____ when you want to establish trust between a SAML-compatible IdP such as Shibboleth or Active Directory Federation Services and AWS, so that users in your organization can access AWS resources.
+387 A: SAML provider. IAM SAML identity providers are used as principals in an IAM trust policy.
 
 
