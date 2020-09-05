@@ -1077,3 +1077,47 @@
 
 360 Q: T or F: Kinesis Data Analytics can read its data source and understand the data structure.
 360 A: T. Schema discovery.
+
+361 Q: A ____ is the router on the Amazon side of the VPN tunnel.
+361 A: Virtual Private Gateway (VPG)
+
+362 Q: What are the three types of virtual interfaces provided by AWS Direct Connect (DX)? 
+362 A: public, private, and transit
+
+363 Q: A ____ virtual interface should be used to access an Amazon VPC using private IP addresses.
+363 A: private
+
+364 Q: A ____ virtual interface can access all AWS public services using public IP addresses.
+364 A: public
+
+365 Q: A ____ virtual interface should be used to access one or more Amazon VPC Transit Gateways associated with Direct Connect gateways. 
+365 A: transit
+
+366 Q: Do you secure an interface endpoint with a security group or an endpoint policy?
+366 A: security group
+
+367 Q: Do you secure a gateway endpoint with a security group or an endpoint policy?
+367 A: endpoint policy
+
+368 Q: T or F: Internet Gateway supports both IPv4 and IPv6.
+368 A: T.
+
+369 Q: T or F: NAT Instance supports both IPv4 and IPv6.
+369 A: F. IPv4 only. For IPv6, use an Egress-Only Internet Gateway
+
+370 Q: NAT Instance must live on a public or a private subnet?
+370 A: Public. And it must have a route to an Internet Gateway. And private instances must have a route to the NAT Instance.
+
+371 Q: NAT Gateway must live on a public or a private subnet?
+371 A: Public. And private instances must have a route to the NAT Gateway.
+
+372 Q: T or F: You secure a NAT Gateway with a security group.
+372 A: F. Security groups cannot be associated with a NAT Gateway.
+
+373 Q: T or F: You can optionally use BGP with VPN.
+373 A: T.
+
+374 Q: T or F: You can optionally use BGP with Direct Connect.
+374 A: F. You must use BGP when you use Direct Connect.
+
+
