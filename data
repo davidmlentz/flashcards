@@ -329,10 +329,10 @@
 110 A: HBase
 
 111 Q: T or F: Data stored on HDFS in an EMR cluster is persistent.
-111 A: F. Data stored on HDFS in an EMR cluster is ephemeral so it will be deleted when a cluster is terminated.
+111 A: F. Data stored on HDFS in an EMR cluster is on EBS volumes—ephemeral so it will be deleted when a cluster is terminated.
 
 112 Q: What are the 3 types of nodes in an EMR cluster?
-112 A: Master nodes, core nodes (storage), and task nodes
+112 A: Master nodes (cluster management), core nodes (task processing + storage), and task nodes (optional for extra task processing power). 
 
 113 Q: T or F: You can run Amazon ECS clusters on Spot Instances.
 113 A: T.
@@ -376,10 +376,10 @@
 126 Q: T or F: If you add a security group to an EC2 instance, that takes effect immediately.
 126 A: T
 
-127 Q: High-resolution custom metrics have a resolution of ______.
+127 Q: EC2 high-resolution custom metrics have a resolution of ______.
 127 A: 1 second
 
-128 Q: Standard-resolution custom metrics have a resolution of _____.
+128 Q: EC2 standard-resolution custom metrics have a resolution of _____.
 128 A: 1 minute
 
 129 Q: T or F: CloudWatch Alarms can publish to CloudWatch Events.
@@ -1159,4 +1159,71 @@
 387 Q: You use a ____ ____ when you want to establish trust between a SAML-compatible IdP such as Shibboleth or Active Directory Federation Services and AWS, so that users in your organization can access AWS resources.
 387 A: SAML provider. IAM SAML identity providers are used as principals in an IAM trust policy.
 
+388 Q: T or F: AWS Batch supports spot instances.
+388 A: T
 
+389 Q: T or F: You can trigger AWS Batch from CloudWatch Events.
+389 A: T.
+
+390 Q: T or F: You can trigger AWS Batch from Step Functions.
+390 A: T.
+
+391 Q: T or F: You can trigger AWS Batch from a Lambda function.
+391 A: T.
+
+392 Q: T or F: AWS Batch can schedule a single job onto multiple nodes.
+392 A: T. There's Multi Node Mode. One instance is the leader and there are 1 or more child nodes. Does not work with spot instances. Best if your EC2s are launched into a cluster placement group.
+
+393 Q: What AWS service do you need if you want to migrate Hadoop clusters to the cloud?
+393 A: EMR
+
+394 Q: T or F: EMR suports auto-scaling.
+394 A: T. Trigger scaling from CloudWatch.
+
+395 Q: T or F: EMR can store data on EBS volumes.
+395 A: T. These volumes are formatted as HDFS and EC2 instances in your EMR cluster can attach them write data there. For long term data storage, EMR can write data to S3 using EMRFS.
+
+396 Q: T or F: EMR can store data on S3.
+396 A: T. Using EMRFS.
+
+397 Q: T or F: An EMR cluster exists entirely inside a single AZ.
+397 A: T.
+
+398 Q: What type of instances can you base an EMR cluster on—on-demand, reserved, spot?
+398 A: All of them.
+
+399 Q: Is Redshift serverless?
+399 A: No. You provision nodes - from 1 node to max of 128. It can be cost effective if your workloads are sustained, but if they're sporadic it may be cheaper to use Athena instead.
+
+400 Q: T or F: A Redshift cluster exists entirely inside a single AZ.
+400 A: T.
+
+401 Q: T or F: EMR can access data in DynamoDB.
+401 A: T. DynamoDB is integrated with Apache Hive, a data warehousing application that runs on Amazon EMR. Hive can read and write data in DynamoDB tables.
+
+402 Q: What is the frequency of metrics collection from EC2 w/standard monitoring (non-custom metrics)?
+402 A: 5 minutes
+
+403 Q: What is the frequency of metrics collection from EC2 w/detailed monitoring (non-custom metrics)?
+403 A: 1 minute
+
+404 Q: T or F: CloudWatch Alarms can trigger EC2 actions.
+404 A: T. Reboot, stop, terminate, recover
+
+405 Q: T or F: CloudWatch Alarms can trigger Auto Scaling.
+405 A: T.
+
+406 Q: T or F: CloudWatch Alarms can trigger SNS.
+406 A: T.
+
+407 Q: T or F: CloudWatch Events can intercept CloudWatch Alarms.
+407 A: T.
+
+408 Q: T or F: You can send the output of CloudWatch Alarms into Kinesis via CloudWatch Events.
+408 A: T
+
+409 Q: T or F: You can send the output of CloudWatch Alarms into Step Functions via CloudWatch Events.
+409 A: T
+
+410 Q: T or F: You can send the output of CloudWatch Alarms into a Lambda function via CloudWatch Events.
+410 A: T
