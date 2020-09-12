@@ -1456,4 +1456,44 @@
 486 Q: T or F: You can access an interface endpoint from your on-site network if you have a DX or VPN connection to its VPC.
 486 A: T. "You can use the following types of connections for a connection between an interface endpoint and your on-premises data center: AWS Direct Connect, AWS Site-to-Site VPN" (from https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html)
 
+487 Q: T or F: You can peer 2 VPCs as long as some of their CIDR blocks don't overlap.
+487 A: F. You can't peer 2 VPCs if any of their CIDR blocks overlap even partially.
 
+488 Q: T or F: Transit VPC is a managed service.
+488 A: F. Transit Gateway is a managed service. (Transit VPC was introduced in 2016 and Transit Gateway in 2018. Transit Gateway is the newer, better way to provide edge connectivity.)
+
+489 Q: T or F: Transit Gateway is a managed service.
+489 A: T. Transit VPC is not. (Transit VPC was introduced in 2016 and Transit Gateway in 2018. Transit Gateway is the newer, better way to provide edge connectivity.)
+
+490 Q: T or F: A Gateway Endpoint is only accessible if it's represented in a route table.
+490 A: T.
+
+491 Q: T or F: If a VPC contains a Gateway Endpoint, you can access that endpoint from an on-prem network if you're connected to the VPC via DX or Site-to-Site VPN.
+491 A: F. A VPC's Gateway Endpoint isn't accessible if you're connected to the VPC via VPN, DX, TGW, or VPC peering. IOW you can't share your VPC's Gateway Endpoint.
+
+492 Q: T or F: If a VPC contains an Interface Endpoint, you can access that endpoint from an on-prem network if you're connected to the VPC via DX or Site-to-Site VPN.
+492 A: T. Interface Endpoints are shareable.
+
+493 Q: DNS resolution must be (enabled|disabled) in a VPC in order to use a Gateway Endpoint in that VPC.
+493 A: enabled
+
+494 Q: Using VPN CloudHub, what's the maximum number of CGWs that can be connected to a single VGW?
+494 A: 10
+
+495 Q: What architecture allows you to connect multiple remote offices using VPN over an existing internet connection.
+495 A: AWS VPN CloudHub. "The AWS VPN CloudHub operates on a simple hub-and-spoke model that you can use with or without a VPC." https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-vpn-cloudhub.html
+
+496 Q: ____ ____ is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+496 A: Amazon CloudSearch https://aws.amazon.com/cloudsearch/
+
+497 Q: T or F: Kinesis Video Streams can output data directly to S3.
+497 A: F. You must build a custom application to route the output to S3.
+
+498 Q: What operating system(s) does AWS WorkSpaces support?
+498 A: Linux and Windows
+
+499 Q: What AWS service allows you to deliver an app via a web browser?
+499 A: Amazon AppStream
+
+500 Q: ____ allows you to provide a managed desktop whereas ____ allows you to deliver an app via a web browser.
+500 A: AWS Workspaces, Amazon AppStream
