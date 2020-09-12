@@ -1227,3 +1227,233 @@
 
 410 Q: T or F: You can send the output of CloudWatch Alarms into a Lambda function via CloudWatch Events.
 410 A: T
+
+411 Q: T or F: CloudWatch Logs Agent can be installed on an on-premises server.
+411 A: T.
+
+412 Q: T or F: You can log DNS queries from Route 53 into CloudWatch Logs.
+412 A: T.
+
+413 Q: T or F: CloudWatch Logs are encrypted with KMS by default.
+413 A: F. Log group data is always encrypted in CloudWatch Logs. By default, the CloudWatch Logs service manages the server-side encryption keys. You can optionally use AWS AWS Key Management Service for this encryption.
+
+414 Q: T or F: CloudWatch Logs Filters can be used to trigger CloudWatch Alarms.
+414 A: T.
+
+415 Q: T or F: You can use CloudWatch Logs Subscriptions to send logs to ElasticSearch.
+415 A: T. CloudWatch Logs -> Subscription Filter -> (Lambda Function (managed by AWS) || KDF) -> ES. Lambda to ES is real time, but KDF to ES is near-real time.
+
+416 Q: T or F: You can use CloudWatch Logs Subscriptions to send logs to S3.
+416 A: T. CloudWatch Logs -> Subscription Filter -> KDF -> S3.
+
+417 Q: T or F: You can use CloudWatch Logs Subscriptions to send logs to KDS.
+417 A: T. CloudWatch Logs -> Subscription Filter -> KDS. And then on to KDF, KDA, etc.
+
+418 Q: T or F: You can feed the output of multiple CloudWatch Logs Subscription Filters into a single KDS.
+418 A: T. And from KDS on to S3, for example. The Subscription Filters can be from different accounts and/or different regions, so you can use this to aggregate disparate logs into a single S3 bucket.
+
+419 Q: Which is newer, CloudWatch Logs Agent or CloudWatch Unified Agent?
+419 A: CloudWatch Unified Agent. Either works on both EC2 instances and on-premises servers.
+
+420 Q: T or F: The CloudWatch Logs Agent can send logs directly into Kinesis?
+420 A: F. Neither can the CloudWatch Unified Agent.
+
+421 Q: T or F: The CloudWatch Unified Agent can send logs directly into Kinesis?
+421 A: F. Neither can the CloudWatch Logs Agent.
+
+422 Q: If your AWS Elastic Beanstalk application performs operations or workflows that take a long time to complete, you can offload those tasks to a dedicated ____ ____
+422 A: worker environment
+
+423 Q: If you're managing an on prem application with Chef Cookbooks and you want to migrate to the cloud, what AWS service should you use?
+423 A: OpsWorks
+
+424 Q: If you're managing an on prem application with Puppet and you want to migrate to the cloud, what AWS service shouadl you use?
+424 A: OpsWorks
+
+425 Q: AWS ____ is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers
+425 A: CodeDeploy
+
+426 Q: T or F: CodeDeploy does blue/green deployments.
+426 A: T. It can. It can also do in-place upgrades if your targets are 1) EC2 instances or 2) an ASG. But if you're using CodeDeploy with an ASG, you can also do blue/green. (It creates a 2nd ASG and brings up the new version there. Requires an ALB.)
+
+427 Q: T or F: CodeDeploy can deploy to autoscaling groups.
+427 A: T.
+
+428 Q: T or F: CodeDeploy can deploy to Lambda.
+428 A: T. It creates a new Lambda version then uses traffic shifting to move traffic to the new version. Uses pre and post traffic hooks (which are Lambda functions) to automate the shift and test the new version. You can set up a CloudWatch Alarm to automatically roll back. In fact SAM uses CodeDeploy natively.
+
+429 Q: T or F: CodeDeploy can deploy to ECS.
+429 A: T. Creates a new ECS task set and shifts traffic from the old task set to the new.
+
+430 Q: Re: CloudFormation: With the ____ attribute you can preserve or (in some cases) backup a resource when its stack is deleted.
+430 A: DeletionPolicy. DeletionPolicy values are Retain, Snapshot (does not apply to all resource types), Delete
+
+431 Q: If a resource in a CloudFormation stack has no DeletionPolicy attribute, CloudFormation ____ the resource by default.
+431 A: deletes. Except RDS clusters, which are Snapshot by default.
+
+432 Q: In order for a CloudFormation template to be able to create IAM resources, it must contain either the or ____ or ____ capabilities.
+432 A: CAPABILITY_IAM or CAPABILITY_NAMED_IAM
+
+433 Q: Use ____ when you want to deploy a CloudFormation stack across multiple accounts and/or regions.
+433 A: StackSets
+
+434 Q: Use a ____ when you want to prevent accidental deletes or updates to a CloudFormation stack.
+434 A: Stack policy
+
+435 Q: Each product in a Service Catalog portfolio is defined by a ____ ____.
+435 A: CloudFormation template
+
+436 Q: The ____ ____ ____ is an open-source framework for building serverless applications.
+436 A: Serverless Application Model (SAM)
+
+437 Q: T or F: OpsWorks can manage an autoscaling group.
+437 A: F.
+
+438 Q: How long does standard retrieval take from Amazon Glacier (not Glacier Deep Archive)?
+438 A: 3 to 5 hours.
+
+439 Q: How long does standard retrieval take from Glacier Deep Archive (not Amazon Glacier)?
+439 A: 12 hours.
+
+440 Q: How long does expedited retrieval take from Amazon Glacier?
+440 A: 1 to 5 minutes. Glacier Deep Archive does not have an expedited retrieval option.
+
+441 Q: How long does bulk retrieval take from Amazon Glacier (not Glacier Deep Archive)?
+441 A: 5 to 12 hours
+
+442 Q: How long does bulk retrieval take from Glacier Deep Archive?
+442 A: 48 hours
+
+443 Q: The ____ ____ provides your backup application with an iSCSI virtual tape library (VTL) interface
+443 A: Tape Gateway. The Tape Gateway provides your backup application with an iSCSI virtual tape library (VTL) interface, consisting of a virtual media changer, virtual tape drives, and virtual tapes. Virtual tapes are stored in Amazon S3 and can be archived to Amazon S3 Glacier or Amazon S3 Glacier Deep Archive.
+
+444 Q: re: Storage Gateway: ____ ____ provides an iSCSI target, which enables you to create block storage volumes and mount them as iSCSI devices from your on-premises or EC2 application servers. It runs in either a cached or stored mode.
+444 A: Volume Gateway
+
+445 Q: re: Storage Gateway: The ____ ____ enables you to store and retrieve objects in Amazon S3 using file protocols such as Network File System (NFS) and Server Message Block (SMB). You can access these objects directly in S3.
+445 A: File Gateway
+
+446 Q: Volume Gateway ____ volumes store your primary data locally.
+446 A: Stored. Because stored volumes store your primary data locally, when creating a new volume from a snapshot, your gateway downloads the data contained within the snapshot to your local hardware. There it becomes the primary data for your new volume.
+
+447 Q: Volume Gateway ____ volumes store your primary data in Amazon S3.
+447 A: Cached. Because cached volumes store your primary data in Amazon S3, when creating a new volume from a snapshot, your gateway keeps the snapshot data in Amazon S3 where it becomes the primary data for your new volume.
+
+448 Q: T or F: You can create EBS snapshots from a Volume Gateway volume.
+448 A: T.
+
+449 Q: T or F: You can directly access any individual file on a Tape Gateway volume (virtual tape) via S3.
+449 A: F. You need to use your backup application to restore the entire tape first.
+
+450 Q: AWS ____ doesn't perform schema or code conversion. If you want to convert an existing schema to a different database engine, you can use AWS ____.
+450 A: DMS, SCT
+
+451 Q: ____ supports ongoing replication to keep the target in sync with the source; ____ does not.
+451 A: DMS, SCT. DMS can use continuous data replication called change data capture (CDC).
+
+452 Q: T or F: During a DMS database migration, the source database remains available.
+452 A: T
+
+453 Q: DMS requires an EC2 instance to do a database replication.
+453 A: T.
+
+454 Q: T or F: You can use Snowball Edge as a target for DMS.
+454 A: T. Source db -> Snowball Edge -> S3 -> target db
+
+455 Q: What AWS service automatically profiles on-premises applications to help plan your application migration to AWS quickly and reliably?
+455 A: Application Discovery Service
+
+456 Q: What AWS service allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations.
+456 A: Server Migration Service. Useful for rehosting applications. AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS. AWS SMS allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations. Migrate entire VMs, but only VMware Vsphere, Windows Hyper-V, and Azure VM.
+
+457 Q: In CIDR notation, what's the minimum size of a VPC?
+457 A: /28
+
+458 Q: In CIDR notation, what's the maximum size of a VPC?
+458 A: /16
+
+459 Q: In the subnet 172.16.0.0/24, which IP addresses are reserved by AWS?
+459 A: 172.16.0.0 - the network. 172.16.0.1 - the router. 172.16.0.2 - DNS. 172.16.0.4 - reserved for future use. 172.16.0.255 - broadcast.
+
+460 Q: A public subnet has to have a route in its route table that sends 0.0.0.0/0 to ____.
+460 A: An IGW
+
+461 Q: A private subnet—if its instances are to download packages and updates—must have a route in its route table that sends 0.0.0.0/0 to ____.
+461 A: A NAT Gateway or a NAT Instance, which must live in a public subnet.
+
+462 Q: T or F: NAT Gateways are inherently HA.
+462 A: F. You must deploy multiple NAT Gateways into multiple AZs for high availability.
+
+463 Q: In order to use an Endpoint Gateway, you must enable ____ ____ in your ____.
+463 A: DNS resolution, VPC
+
+464 Q: T or F: You can use an Endpoint Gateway in your on-prem network if you've connected to your VPC using DX.
+464 A: F. 
+
+465 Q: T or F: You can secure a gateway endpoint using a security group.
+465 A: F. When you create an endpoint, you can attach an endpoint policy to it that controls access to the service to which you are connecting. If your VPC's security group's outbound rules are restricted, you must add a rule that allows outbound traffic from your VPC to the service that's specified in your endpoint.
+
+466 Q: T or F: You can secure an interface endpoint using a security group.
+466 A: T.
+
+467 Q: T or F: You can use an interface endpoint in your on-prem network if you've connected to your VPC using DX.
+467 A: T. Or VPN.
+
+468 Q: Using an S3 bucket policy, you can restrict access from a ____ IP address but not a ____ IP address.
+468 A: public, private. This is why you can't use SourceIp to restrict access from a VPC endpoint (which would originate from a private IP address) and you have to use sourceVpc or sourceVpce in your bucket policy instead.
+
+469 Q: T or F: Systems Manager works with both Linux and Windows.
+469 A: T.
+
+470 Q: What is the name of the pre-defined SSM patch baseline for Windows?
+470 A: AWS-DefaultPatchBaseline
+
+471 Q: Where can you see cost allocation tags?
+471 A: In the billing console. Only in the billing console.
+
+472 Q: What AWS service is an online tool that provides you real time guidance to help you provision your resources following AWS best practices.
+472 A: Trusted Advisor. It's enabled at a basic level (core checks) by default for all customers, but has an advanced version available for enterprise and business customers (full set of checks and allows you programmatic access to the API). Among other things, it gives recommendations for cost optimization and points out service limits.
+
+473 Q: T or F: AWS Trusted Advisor can let you know if an S3 bucket is public.
+473 A: T. But it can't let you know if an object within a bucket is public.
+
+474 Q: T or F: AWS Trusted Advisor can let you know if an object in an S3 bucket is public.
+474 A: F. But it can let you know if the bucket is public.
+
+475 Q: T or F: A business or enterprise support customer can use Trusted Advisor to programmatically request to have quotas/service limits raised.
+475 A: F. Manually enter a case in AWS Service Center or programmatically use the AWS Service Quotas API.
+
+476 Q: What is the minimum storage duration of Amazon Glacier?
+476 A: 90 days
+
+477 Q: What is the minimum storage duration of Glacier Deep Archive?
+477 A: 180 days.
+
+478 Q: T or F: You can directly access any individual file on a Volume Gateway volume via S3.
+478 A: F. You can create an EBS snapshot from the volume as it exists on S3, then restore that to an EBS volume and browse the files there.
+
+479 Q: T or F: You can export data from ElasticSearch using DMS.
+479 A: F. ElasticSearch is not a DMS source.
+
+480 Q: T or F: CloudHSM must be located in a VPC.
+480 A: T.
+
+481 Q: T or F: You can access CloudHSM via VPC peering.
+481 A: T.
+
+482 Q: T or F: Transit Gateway supports IP Multicast.
+482 A: T.
+
+483 Q: T or F: VPC endpoints are inherently HA.
+483 A: T.
+
+484 Q: Gateway endpoints are available for which 2 services?
+484 A: S3 and DynamoDB.
+
+485 Q: T or F: VPC A can access VPC B's gateway endpoint if they're connected through a transit gateway.
+485 A: F. A gateway endpoint can't be used from outside of the VPC where it's created, even via DX, VPN, peering or transit gateway.
+
+486 Q: T or F: You can access an interface endpoint from your on-site network if you have a DX or VPN connection to its VPC.
+486 A: T. "You can use the following types of connections for a connection between an interface endpoint and your on-premises data center: AWS Direct Connect, AWS Site-to-Site VPN" (from https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html)
+
+
