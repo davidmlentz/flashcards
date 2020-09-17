@@ -1497,3 +1497,106 @@
 
 500 Q: ____ allows you to provide a managed desktop whereas ____ allows you to deliver an app via a web browser.
 500 A: AWS Workspaces, Amazon AppStream
+
+501 Q: What are the targets for S3 events?
+501 A: SNS, SQS and Lambda
+
+502 Q: T or F: Redshift does automated snapshots.
+502 A: T. You can also do manual snapshots. They're stored in S3. You can configure Redshift to automatically copy your snapshots—whether they're automated or manual—to another region for DR.
+
+503 Q: T or F: S3 Events can publish a notification when an object is created.
+503 A: T.
+
+504 Q: T or F: S3 Events can publish a notification when an object is removed.
+504 A: T.
+
+505 Q: T or F: S3 Events can publish a notification when an object is restored from Glacier.
+505 A: T.
+
+506 Q: T or F: S3 Events can publish a notification when an object is replicated.
+506 A: T.
+
+507 Q: T or F: Amazon Aurora supports the MyISAM storage engine for MySQL.
+507 A: F. 
+
+508 Q: T or F: Amazon Aurora supports the InnoDB storage engine for MySQL.
+508 A: T.
+
+509 Q: T or F: You can use an S3 bucket as a CloudFront origin.
+509 A: T. S3, ELB, EC2, or other web server.
+
+510 Q: T or F: You can use an ELB as a CloudFront origin.
+510 A: T. S3, ELB, EC2, or other web server.
+
+511 Q: T or F: You can use an EC2 as a CloudFront origin.
+511 A: T. S3, ELB, EC2, or other web server.
+
+512 Q: T or F: You can use an RDS instance as a CloudFront origin.
+512 A: F. S3, ELB, EC2, or other web server.
+
+513 Q: T or F: You can use a DynamoDB instance as a CloudFront origin.
+513 A: F. S3, ELB, EC2, or other web server.
+
+514 Q: T or F: You can create an Alias record in Route 53 to point a zone apex at a CloudFront distribution.
+514 A: T.
+
+515 Q: T or F: CloudFront supports geo-restriction.
+515 A: T.
+
+516 Q: What AWS service provides serverless business intelligence that uses machine learning and allows you to publish dashboards?
+516 A: QuickSight
+
+517 Q: What AWS services can QuickSight read from?
+517 A: Aurora, Athena, S3, RDS, Redshift
+
+518 Q: To which AWS services can you publish VPC flow logs?
+518 A: S3, CloudWatch Logs
+
+519 Q: Which supports advanced data structures—Redis, or Memcached?
+519 A: Redis.
+
+520 Q: Which supports multithreaded architecture—Redis, or Memcached?
+520 A: Memcached
+
+521 Q: Which supports snapshots—Redis, or Memcached?
+521 A: Redis
+
+522 Q: Which supports read replicas —Redis, or Memcached?
+522 A: Redis
+
+523 Q: Which supports transactions—Redis, or Memcached?
+523 A: Redis
+
+524 Q: Which supports pub/sub—Redis, or Memcached?
+524 A: Redis
+
+525 Q: Which supports geospatial indexing—Redis, or Memcached?
+525 A: Redis
+
+526 Q: Re: Elasticache: If you need the simplest data model possible, you should use (Redis|Memcached)
+526 A: Memcached
+
+527 Q: Re: Elasticache: If you need large nodes and multithreading, you should use (Redis|Memcached)
+527 A: Memcached
+
+528 Q: Re: Elasticache: If you need to add and remove nodes on demand, you should use (Redis|Memcached)
+528 A: Memcached
+
+529 Q: Re: Elasticache: If you need to cache objects, you should use (Redis|Memcached)
+529 A: Memcached
+
+530 Q: Re: Elasticache: If you need encryption, you should use (Redis|Memcached)
+530 A: Redis
+
+531 Q: Re: Elasticache: If you need to dynamically add and remove shards, you should use (Redis|Memcached)
+531 A: Redis
+
+532 Q: Re: Elasticache: If you need to partition your data, you should use (Redis|Memcached)
+532 A: Redis
+
+533 Q: Is Redis replication synchronous or asynchronous?
+533 A: Asynchronous
+
+534 Q: T or F: Redis supports point-in-time snapshots?
+534 A: T
+
