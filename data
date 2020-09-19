@@ -1600,3 +1600,19 @@
 534 Q: T or F: Redis supports point-in-time snapshots?
 534 A: T
 
+535 Q: T or F: You can persist data in a Redis cluster.
+535 A: T. You can take a snapshot, save it and restore it.
+
+536 Q: T or F: Elasticache provides a way to automatically migrate from Redis to Memcached/Memcached to Redis.
+536 A: F. 
+
+537 Q: T or F: Cognito supports MFA.
+537 A: T.
+
+538 Q: T or F: Cognito supports SAML.
+538 A: T.
+
+539 Q: T or F: Elastic Beanstalk can optionally delete the source code bundle from the instances it launches or updates.
+539 A: F. Do this manually.
+
+
