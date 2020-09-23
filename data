@@ -569,7 +569,7 @@
 190 A: Opsitem. It could be a resource-related failure, a maintenance notification, security alert, or a performance issue. An Opsitem includes relevant information that aids with investigation and resolution of the underlying event.
 
 191 Q: AWS _____ is a feature of AWS Systems Manager that allows you to quickly validate and roll out configurations across an application of any size—whether hosted on EC2, containers, Lambda, mobile apps, or IoT devices—in a controlled and monitored way. 
-191 A: AppConfig. You can use an AppConfig Validator (a schema or a Lambda function) to validate configuration data to make sure it is syntactically and semantically correct according to your definitions before deploying it to your application. AppConfig allows you to follow deployment best practices by rolling out configuration at a pace that you define while monitoring for errors.
+191 A: AppConfig. You can use an AppConfig Validator (a schema or a Lambda function) to validate configuration data to make sure it is syntactically and semantically correct according to your definitions before deploying it to your application. "AppConfig allows you to follow deployment best practices by rolling out configuration at a pace that you define while monitoring for errors." https://aws.amazon.com/systems-manager/faq/
 
 192 Q: If you need to model a complex set of application configurations that you can validate and deploy safely in a controlled environment, with ability to rollback changes under certain conditions, you should use _____. 
 192 A: AWS AppConfig.
@@ -1615,4 +1615,20 @@
 539 Q: T or F: Elastic Beanstalk can optionally delete the source code bundle from the instances it launches or updates.
 539 A: F. Do this manually.
 
+540 Q: T or F: CloudWatch Alarms can be triggered by EC2 state changes.
+540 A: F.
 
+541 Q: A CloudWatch Events ____ matches incoming events and routes them to targets (EC2, Lambda, Kinesis, ECS, Step Functions, SQS, SNS) for processing.
+541 A: rule
+
+542 Q: T or F: Elasticache supports security groups.
+542 A: T. "ElastiCache supports both subnet security groups in Amazon Virtual Private Cloud (Amazon VPC) and classic Amazon EC2 security groups." from https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf
+
+543 Q: T or F: You can use consistent hashing with both Redis and Memcached.
+543 A: F. Memcached only.
+
+544 Q: Redis relication is (synchronous|asynchronous).
+544 A: Asynchronous. You could lose some data if your primary node fails. Even if it automatically fails over and promotes a read replica as the new primary, that replica may not have all the data the original primary had. "If you have crucial data that cannot be lost (for example, transactional or purchase data), we recommend that you also store that in a durable database such as Amazon DynamoDB or Amazon RDS." https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf
+
+545 Q: T or F: You can use a self-signed certificate for HTTPS communication between CloudFront and your origin.
+545 A: F.
