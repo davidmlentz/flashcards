@@ -1631,4 +1631,90 @@
 544 A: Asynchronous. You could lose some data if your primary node fails. Even if it automatically fails over and promotes a read replica as the new primary, that replica may not have all the data the original primary had. "If you have crucial data that cannot be lost (for example, transactional or purchase data), we recommend that you also store that in a durable database such as Amazon DynamoDB or Amazon RDS." https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf
 
 545 Q: T or F: You can use a self-signed certificate for HTTPS communication between CloudFront and your origin.
-545 A: F.
+545 A: F See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+
+546 Q: T or F: Capacity Reservations reserve capacity in a specific Availability Zone.
+546 A: T See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+
+547 Q: T or F: Zonal Reserved Instances reserve capacity in a specific Availability Zone.
+547 A: T See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+
+548 Q: T or F: Regional Reserved Instances reserve capacity in a specific Availability Zone.
+548 A: F See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+
+549 Q: T or F: Savings Plans reserve capacity in a specific Availability Zone.
+549 A: F See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+
+550 Q: T or F: Capacity Reservations support Windows.
+550 A: F. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
+
+551 Q: T or F: You can share an AMI with specific AWS accounts without making the AMI public.
+551 A: T. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html
+
+552 Q: Maximum IOPS on a provisioned IOPS EBS volume = ____ IOPS.
+552 A: 64000 IOPS
+
+553 Q: T or F: Elastic Load Balancing offers ability to load balance across AWS and on-premises resources using the same load balancer.
+553 A: T. See https://aws.amazon.com/elasticloadbalancing/
+
+554 Q: T or F: Connection draining is enabled by default for ALBs.
+554 A: T. 
+
+555 Q: In order to use RDS read replicas, you must enable ____.
+555 A: automatic backups
+
+556 Q: Amazon Redshift ____ ____ ____ ensures that all COPY and UNLOAD traffic between your Redshift cluster and your data repositories will travel through your Amazon VPC.
+556 A: Enhanced VPC routing
+
+557 Q: T or F: You can influence your Redshift costs by choosing reserved nodes or on-demand nodes.
+557 A: T.
+
+558 Q: T or F: You can configure automated snapshots in Redshift.
+558 A: T.
+
+559 Q: T or F: You can take manual snapshots in Redshift.
+559 A: T.
+
+560 Q: T or F: You can configure Redshift to copy manual and automated snapshots across regions.
+560 A: T.
+
+561 Q: T or F: You can peer VPCs across different accounts.
+561 A: T.
+
+562 Q: T or F: You can peer VPCs across different regions.
+562 A: T.
+
+563 Q: T or F: If one of the VPCs in a peering connection has a DX connection to an on-premise network, that DX connection can be extended to the peered VPC.
+563 A: F.
+
+564 Q: T or F: If one of the VPCs in a peering connection has a VPN connection to an on-premise network, that VPN connection can be extended to the peered VPC.
+564 A: F.
+
+565 Q: T or F: If one of the VPCs in a peering connection has an IGW, that IGW can be extended to the peered VPC (so that both VPCs can reach the internet).
+565 A: F.
+
+566 Q: T or F: If one of the VPCs in a peering connection has a NAT device, that NAT can be extended to the peered VPC (so that private subnets in both VPCs can reach the internet).
+566 A: F.
+
+567 Q: T or F: If one of the VPCs in a peering connection has a gateway endpoint, that gateway endpoint can be extended to the peered VPC (so that both VPCs can reach the service provided on the endpoint).
+567 A: F.
+
+568 Q: T or F: A subnet can only have one NACL in effect at a time.
+568 A: T.
+
+569 Q: T or F: Security groups do not support deny rules.
+569 A: T.
+
+570 Q: T or F: You can connect a corporate data center to a Transit Gateway via VPN.
+570 A: T.
+
+571 Q: A ____ ____ is hub you can create to connect multiple VPCs.
+571 A: Transit gateway
+
+572 Q: A ____ ____ is a central hub that connects VPCs and on-prem data centers.
+572 A: Transit gateway
+
+573 Q: T or F: A transit gateway has its own route table.
+573 A: T.
+
+
