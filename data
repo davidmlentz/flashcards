@@ -1717,4 +1717,50 @@
 573 Q: T or F: A transit gateway has its own route table.
 573 A: T.
 
+574 Q: T or F: You can assign a static IP address to an NLB.
+574 A: T.
+
+575 Q: You can use a ____ ____ ____ to determine how Route 53 responds to DNS queries from resources in your VPCs.
+575 A: private hosted zone
+
+576 Q: If you want to use a private hosted zone in your VPC, that VPC's ____ and ____ settings must be set to true.
+576 A: enableDnsHostnames, enableDnsSupport
+
+577 Q: In SAML federation with ADFS, Active Directory ____ are mapped onto AWS roles.
+577 A: groups
+
+578 Q: In SAML federation with ADFS, Active Directory Groups are mapped onto AWS ____.
+578 A: roles
+
+579 Q: Simple AD small version can support up to ____ users.
+579 A: 500
+
+580 Q: Simple AD large version can support up to ____ users.
+580 A: 5000
+
+581 Q: An IAM role has a ____ ____ that defines which conditions must be met to allow other principals to assume it.
+581 A: trust policy. See https://aws.amazon.com/blogs/security/how-to-use-trust-policies-with-iam-roles/
+
+582 Q: An IAM role's ____ ____ defines which principals can assume the role, and under which conditions.
+582 A: trust policy. See https://aws.amazon.com/blogs/security/how-to-use-trust-policies-with-iam-roles/
+
+583 Q: T or F: An IAM role's trust policy has no Resource attribute.
+583 A: T. This is because the Resource is the role itself.
+
+584 Q: What's the minimum amount of time you can set the STS:AssumeRole action's temporary credentials to last?
+584 A: 15 minutes. Temporary credentials returned by the STS:AssumeRole action are valid for a duration you specify, with a minimum duration of 15 minutes and a maximum duration of 12 hours.
+
+585 Q: What's the maximum amount of time you can set the STS:AssumeRole action's temporary credentials to last?
+585 A: 12 hours. Temporary credentials returned by the STS:AssumeRole action are valid for a duration you specify, with a minimu
+m duration of 15 minutes and a maximum duration of 12 hours.
+
+586 Q: For how long are certificates created in ACM valid?
+586 A: 13 months
+
+587 Q: T or F: GuardDuty is enabled by default.
+587 A: F
+
+588 Q: T or F: GuardDuty can work across AWS accounts.
+588 A: T.
+
 
