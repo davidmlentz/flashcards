@@ -68,7 +68,7 @@
 23 A: Direct Connect gateway
 
 24 Q: Does AWS Managed VPN service support Jumbo Frames?
-24 A: No
+24 A: No. "VPN connections and traffic sent over an internet gateway are limited to 1500 MTU." https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/network_mtu.html
 
 25 Q: What AWS service provides APIs you can call to obtain temporary security credentials?
 25 A: STS
@@ -637,14 +637,14 @@
 213 Q: By default, does a Lambda function operate inside or outside of a VPC?
 213 A: Outside. You can optionally launch a Lambda function inside your VPC. If you do, it'll get an ENI and an associate security group.
 
-214 Q: CLI, SDK, API Gateway invoke Lambda functions synchronously/asynchronously/via event source mapping?
+214 Q: CLI, SDK, API Gateway invoke Lambda functions (synchronously|asynchronously|via event source mapping)?
 214 A: synchronously
 
-215 Q: CloudWatch Events, S3, SNS invoke Lambda functions synchronously/asynchronously/via event source mapping?
+215 Q: CloudWatch Events, S3, SNS invoke Lambda functions (synchronously|asynchronously|via event source mapping)?
 215 A: asynchronously
 
-216 Q: Kinesis data streams, SQS, DynamoDB streams invoke Lambda functions synchronously/asynchronously/via event source mapping?
-216 A: via event source mapping
+216 Q: Kinesis data streams, SQS, DynamoDB streams invoke Lambda functions (synchronously|asynchronously|via event source mapping)?
+216 A: via event source mapping. "You can use event source mappings to process items from a stream or queue in services that don't invoke Lambda functions directly." (from https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html)
 
 217 Q: Instead of sending the output (and error messages) from your Lambda functions to DLQs, Amazone recommends sending them to _____.
 217 A: Destinations
@@ -1277,7 +1277,7 @@
 426 A: T. It can. It can also do in-place upgrades if your targets are 1) EC2 instances or 2) an ASG. But if you're using CodeDeploy with an ASG, you can also do blue/green. (It creates a 2nd ASG and brings up the new version there. Requires an ALB.)
 
 427 Q: T or F: CodeDeploy can deploy to autoscaling groups.
-427 A: T.
+427 A: T. "When new Amazon EC2 instances are launched as part of an Amazon EC2 Auto Scaling group, CodeDeploy can deploy your revisions to the new instances automatically. You can also coordinate deployments in CodeDeploy with Amazon EC2 Auto Scaling instances registered with Elastic Load Balancing load balancers." From https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html
 
 428 Q: T or F: CodeDeploy can deploy to Lambda.
 428 A: T. It creates a new Lambda version then uses traffic shifting to move traffic to the new version. Uses pre and post traffic hooks (which are Lambda functions) to automate the shift and test the new version. You can set up a CloudWatch Alarm to automatically roll back. In fact SAM uses CodeDeploy natively.
@@ -1364,7 +1364,7 @@
 455 A: Application Discovery Service
 
 456 Q: What AWS service allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations.
-456 A: Server Migration Service. Useful for rehosting applications. AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS. AWS SMS allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations. Migrate entire VMs, but only VMware Vsphere, Windows Hyper-V, and Azure VM.
+456 A: Server Migration Service. Useful for rehosting applications. "AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS. AWS SMS allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations." (https://aws.amazon.com/server-migration-service/)  Migrate entire VMs, but only VMware Vsphere, Windows Hyper-V, and Azure VM.
 
 457 Q: In CIDR notation, what's the minimum size of a VPC?
 457 A: /28
@@ -1763,4 +1763,245 @@ m duration of 15 minutes and a maximum duration of 12 hours.
 588 Q: T or F: GuardDuty can work across AWS accounts.
 588 A: T.
 
+589 Q: "A ____ ____ ____ is a resource in Lambda that reads items from an Amazon SQS queue, an Amazon Kinesis stream, or an Amazon DynamoDB stream, and sends them to your function in batches." 
+589 A: event source mapping. From https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html
 
+590 Q: SNS can trigger Lambda (synchronously|asynchronously).
+590 A: asynchronously
+
+591 Q: S3 can trigger Lambda (synchronously|asynchronously).
+591 A: asynchronously
+
+592 Q: CloudWatch Events can trigger Lambda (synchronously|asynchronously).
+592 A: asynchronously
+
+593 Q: ELB can trigger Lambda (synchronously|asynchronously).
+593 A: synchronously
+
+594 Q: API Gateway can trigger Lambda (synchronously|asynchronously).
+594 A: synchronously
+
+595 Q: KDF can trigger Lambda (synchronously|asynchronously).
+595 A: synchronously
+
+596 Q: T or F: Lambda functions run inside a VPC by default.
+596 A: F
+
+597 Q: What's the maximum amount of data you can store in a storage gateway tape gateway library?
+597 A: 1 PB. Up to 1500 virtual tapes with an aggregate capacity of 1 PB.
+
+598 Q: What's the maximum amount of data you can store on an AWS Snowmobile?
+598 A: 100PB per Snowmobile
+
+599 Q: Which AWS service provides serverless ETL?
+599 A: AWS Glue
+
+600 Q: What AWS service can discover your data on an AWS data service or any JDBC-compatible data source and stores the associated metadata in its own catalog?
+600 A: AWS Glue
+
+601 Q: The ____ ____ ____ allows the client to call a single Lambda function in the backend. The function accesses many resources or features of other AWS services, including calling other Lambda functions.
+601 A: Lambda proxy integration. See https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
+
+602 Q: A ____ ____ ____ enables you to integrate an API route with a Lambda function. When a client calls your API, API Gateway sends the request to the Lambda function and returns the function's response to the client.
+602 A: Lambda proxy integration. See https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html
+
+603 Q: What AWS service helps you manage your software licenses by creating licensing rules that get enforced when you launch an EC2.
+603 A: AWS License Manager
+
+604 Q: Which AWS services is a virtual appliance that works with VMWare vCenter and allows you to import your VMs as EC2s.
+604 A: Amazon EC2 VM Import Connector
+
+605 Q: T or F: VM Import/Export allows you to import a VM image as an EC2. 
+605 A: T. You can import a VM image as either an EC2 or an AMI.
+
+606 Q: T or F: VM Import/Export allows you to import a VM image as an AMI.
+606 A: T. You can import a VM image as either an EC2 or an AMI.
+
+607 Q: What are the 3 types of VMs you can migrate using Server Migration Service (SMS)?
+607 A: VMWare, Azure, Hyper-V
+
+608 Q: T or F: SMS is agentless.
+608 A: T. CloudEndure requires an agent, though. Instead of an agent, SMS uses the Server Migration Connector (SMS Connector), a pre-configured VM you install in the same virtualization environment as your source VM (the one you want to replicate). When you do the replication, SMS Connector takes a snapshot of the VM, creates a VM image, uploads it to S3, and then VM Import/Export turns it into an EBS snapshot and creates an AMI. See https://aws.amazon.com/blogs/architecture/field-notes-choosing-a-rehost-migration-tool-cloudendure-or-aws-sms/
+
+609 Q: T or F: a single CloudWatch Events rule can route to multiple targets.
+609 A: T.
+
+610 Q: T or F: Kinesis Video Streams can store video.
+610 A: T.
+
+611 Q: T or F: Kinesis Video Streams can output an HLS stream.
+611 A: T. See https://aws.amazon.com/blogs/aws/amazon-kinesis-video-streams-adds-support-for-hls-output-streams/
+
+612 Q: T or F: An ALB has a security group
+612 A: T
+
+613 Q: T or F: An NLB has a security group.
+613 A: F
+
+614 Q: What is the minimum visibility timeout for a message in SQS?
+614 A: 0 seconds minimum and 12 hours maximum.
+
+615 Q: What is the maximum visibility timeout for a message in SQS?
+615 A: 0 seconds minimum and 12 hours maximum.
+
+616 Q: T or F: You can only assign one security group to an instance.
+616 A: F. You can assign up to five security groups to an instance.
+
+617 Q: T or F: You can assign up to five security groups to an instance.
+617 A: T
+
+618 Q: T or F: re: EC2, There is a vCPU-based on-demand instance limit per region.
+618 A: T.
+
+619 Q: Which is better for storing session data, RDS or DynamoDB?
+619 A: DynamoDB. It's more performant.
+
+620 Q: T or F: Amazon Athena supports XML.
+620 A: F. It supports Apache Parquet, Apache ORC, and JSON.
+
+621 Q: T or F: Elasticache Memcached supports encryption.
+621 A: F. Elasticache Redis supports encryption at rest and in transit.
+
+622 Q: T or F: Elasticache Redis supports encryption.
+622 A: T. Elasticache Redis supports encryption at rest and in transit. Elasticache Memcached does not.
+
+623 Q: T or F: NAT Gateway supports both IPv4 and IPv6.
+623 A: F. IPv4 only. For IPv6, use an Egress-Only Internet Gateway
+
+624 Q: T or F: Route 53 geolocation routing requires a default route.
+624 A: T. Route 53 will use this route if the location of the requesting client can't be determined.
+
+625 Q: T or F: After you create a set of DHCP options, you can't modify them.
+625 A: T. See https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html
+
+626 Q: T or F: You can have multiple sets of DHCP options, but you can associate only one set of DHCP options with a VPC at a time.
+626 A: T. "After you associate a new set of DHCP options with a VPC, any existing instances and all new instances that you launch in the VPC use the new options. You don't need to restart or relaunch the instances." See https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html
+
+627 Q: Defining a ____ ____ instead of a ____ ____ allows you to have multiple versions.
+627 A: launch template, launch configuration
+
+628 Q: By using a [launch template|launch configuration], you can create an ASG that launches both spot and on-demand instances.
+628 A: launch template. See https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html
+
+629 Q: By using a [launch template|launch configuration], you can create an ASG that launches multiple instance types.
+629 A: launch template. See https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html
+
+630 Q: AWS enforces quotas on the number of EC2s you can run based on their ____.
+630 A: vCPUs.
+
+631 Q: "____ ____ is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS."
+631 A: Amazon Macie. See https://aws.amazon.com/macie/faq/ and https://aws.amazon.com/macie/
+
+632 Q: What data store(s) does Amazon Macie search?
+632 A: S3 only
+
+633 Q: RDS read replicas are updated [synchronously|asynchronously].
+633 A: asynchronously
+
+634 Q: T or F: RDS read replicas for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server can be encrypted.
+634 A: T. You can optionally use KMS to encrypt the data at rest. It's also encrypted in transit from the master to the replica.
+
+635 Q: "____ scaling creates target tracking scaling policies for the resources in your scaling plan."
+635 A: Dynamic. "These scaling policies adjust resource capacity in response to live changes in resource utilization. The intention is to provide enough capacity to maintain utilization at the target value specified by the scaling strategy." from https://docs.aws.amazon.com/autoscaling/plans/userguide/how-it-works.html
+
+636 Q: "____ scaling uses machine learning to analyze each resource's historical workload and regularly forecasts the future load for the next two days."
+636 A: Predictive. "Predictive scaling generates scheduled scaling actions to make sure that the resource capacity is available before your application needs it. Like dynamic scaling, predictive scaling works to maintain utilization at the target value specified by the scaling strategy." from https://docs.aws.amazon.com/autoscaling/plans/userguide/how-it-works.html
+
+637 Q: Re: RDS: "A ____ ____ acts as a container for engine configuration values that are applied to one or more DB instances."
+637 A: parameter group. See https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html
+
+638 Q: T or F: SQS supports KMS encryption.
+638 A: T. You can optionally configure any queue to use KMS.
+
+639 Q: What is the default duration an SQS message is stored?
+639 A: 4 days
+
+640 Q: What is the max duration an SQS message can be stored?
+640 A: 14 days
+
+641 Q: re: SWF: "The ____ is a program that controls the coordination of tasks, i.e. their ordering, concurrency, and scheduling according to the application logic."
+641 A: decider. SWF uses workers and a decider. See https://aws.amazon.com/swf/faqs/
+
+642 Q: re: SWF: "____ are programs that interact with Amazon SWF to get tasks, process received tasks, and return the results."
+642 A: workers. SWF uses workers and a decider. See https://aws.amazon.com/swf/faqs/
+
+643 Q: How do workers and deciders get task information from the SWF service?
+643 A: Polling. More specifically: long polling.
+
+644 Q: "When an instance launches, Amazon EC2 Auto Scaling uses the value of the ____ for the Auto Scaling group to determine how long to wait before checking the health status of the instance."
+644 A: HealthCheckGracePeriod. See https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html
+
+645 Q: "A scaling ____ helps you prevent your Auto Scaling group from launching or terminating additional instances before the effects of previous activities are visible."
+645 A: cooldown. See https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html
+
+646 Q: T or F: You can't modify a launch configuration after you've created it.
+646 A: T. See https://docs.aws.amazon.com/autoscaling/ec2/userguide/change-launch-config.html
+
+647 Q: ____ define the port and protocol clients will use to reach an ALB.
+647 A: Listeners
+
+648 Q: ____ ____ are logical collections of AWS resources behind a load balancer.
+648 A: Target groups. They can hold containers, IP addresses, or EC2 instances. Target groups are homogeneous and can't contain a mixture of these different types of resources; everything in the target group must be the same type of resource.
+
+649 Q: What protocol does EFS use?
+649 A: NFS. You can't use EFS with Windows instances.
+
+650 Q: T or F: Multiple Amazon EC2 instances can access an Amazon EFS file system at the same time
+650 A: T. "Amazon EFS file systems can be mounted on up to thousands of Amazon EC2 instances concurrently." https://docs.aws.amazon.com/efs/latest/ug/performance-tips.html
+
+651 Q: T or F: EFS has multiple storage classes.
+651 A: T. Standard and Infrequent Access. See https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html
+
+652 Q: What are the 2 throughput modes EFS uses?
+652 A: Provisioned Throughput and Bursting Throughput. With bursting, your throughput increases as you use more storage. "Using the default Bursting Throughput mode, throughput scales as your file system grows. Using Provisioned Throughput mode, you can specify the throughput of your file system independent of the amount of data stored." See https://docs.aws.amazon.com/efs/latest/ug/performance.html.
+
+653 Q: T or F: You can't use EFS with Windows instances.
+653 A: T.
+
+654 Q: T or F: You can access a single EFS share from instances in multiple AZs.
+654 A: T.
+
+655 Q: T or F: You can access EFS over DX or VPN from an on-prem client.
+655 A: T. "You can mount your Amazon EFS file systems on your on-premises data center servers when connected to your Amazon VPC with AWS Direct Connect or AWS VPN." See https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html
+
+656 Q: T or F: An Amazon EFS file system can only have mount targets in one VPC at a time.
+656 A: T. See https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html
+
+657 Q: T or F: You can mount an EFS file system using either the DNS name or the IP address of a mount target.
+657 A: T. It'll have the same DNS name in all availability zones, but a different IP. So mounting using the IP is probably higher maintenance. "A mount target provides an IP address for an NFSv4 endpoint at which you can mount an Amazon EFS file system. You mount your file system using its Domain Name Service (DNS) name, which resolves to the IP address of the EFS mount target in the same Availability Zone as your EC2 instance." See https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html BUT if you're mounting the filesystem from an on-prem host, you should use the IP address an  NOT the hostname: "For the sake of simplicity, we recommend mounting an Amazon EFS file system on an on-premises server using a mount target IP address instead of a DNS name." ibid
+
+658 Q: How many mount targets can an EFS file system have in an availability zone?
+658 A: 1.
+
+659 Q: T or F: An Amazon EFS file system can only have mount targets in one VPC at a time.
+659 A: T.
+
+660 Q: What port does NFS use?
+660 A: 2049
+
+661 Q: ____ ____ is a fully managed backup service that makes it easy to centralize and automate data backup across AWS services in the cloud and on-premises.
+661 A: AWS Backup. "AWS Backup is a unified backup service designed to simplify the creation, migration, restoration, and deletion of backups, while providing improved reporting and auditing." https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
+
+662 Q: T or F: You can configure EFS to automatically move stale data to the IA storage class.
+662 A: T. "Amazon EFS lifecycle management automatically manages cost-effective file storage for your file systems. When enabled, lifecycle management migrates files that haven't been accessed for a set period of time to the Infrequent Access (IA) storage class. You define that period of time by using a lifecycle policy." https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html
+
+663 Q: What are the 2 EFS performance modes?
+663 A: General Purpose and Max I/O
+
+664 Q: T or F: You can use DataSync to transfer files between two EFS file systems.
+664 A: T
+
+665 Q: ____ ____ is an online data transfer service that simplifies, automates, and accelerates copying large amounts of data to and from AWS storage services over the internet or AWS Direct Connect.
+665 A: AWS DataSync. "DataSync includes encryption and integrity validation to help make sure your data arrives securely, intact, and ready to use." See https://aws.amazon.com/datasync/faqs/
+
+666 Q: T or F: You can use AWS DataSync to copy files between EFS file systems in different regions.
+666 A: T. "Yes, you can use AWS DataSync to transfer files between two EFS file systems, including ones in different AWS Regions or ones belonging to different AWS accounts." https://aws.amazon.com/efs/faq/
+
+667 Q: T or F: You can access EFS from ECS.
+667 A: T. ECS on EC2 or Fargate.
+
+668 Q: T or F: You can access EFS from EKS.
+668 A: T. EKS on EC2 or Fargate.
+
+669 Q: T or F: You can access EFS from Lambda.
+669 A: T.
