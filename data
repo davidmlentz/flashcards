@@ -1631,7 +1631,7 @@
 544 A: Asynchronous. You could lose some data if your primary node fails. Even if it automatically fails over and promotes a read replica as the new primary, that replica may not have all the data the original primary had. "If you have crucial data that cannot be lost (for example, transactional or purchase data), we recommend that you also store that in a durable database such as Amazon DynamoDB or Amazon RDS." https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf
 
 545 Q: T or F: You can use a self-signed certificate for HTTPS communication between CloudFront and your origin.
-545 A: F See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
+545 A: F See https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-cloudfront-to-custom-origin.html
 
 546 Q: T or F: Capacity Reservations reserve capacity in a specific Availability Zone.
 546 A: T See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html#capacity-reservations-differences
@@ -2005,3 +2005,14 @@ m duration of 15 minutes and a maximum duration of 12 hours.
 
 669 Q: T or F: You can access EFS from Lambda.
 669 A: T.
+
+670 Q: You can see the amount of memory used by a Lambda function by looking at (CloudWatch Logs|CloudWatch Metrics)?
+670 A: Logs
+
+671 Q: You can see the amount of memory provisioned for a Lambda function by looking at (CloudWatch Logs|CloudWatch Metrics)?
+671 A: Logs
+
+672 Q: What are the 2 types of targets a Lambda function can use for its DLQ?
+672 A: SQS, SNS. See https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq
+
+
