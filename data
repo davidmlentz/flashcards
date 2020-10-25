@@ -154,7 +154,7 @@
 52 Q: What EC2 placement group strategy is best suited for high-performance computing (HPC)?
 52 A: Cluster placement group
 
-53 Q: What EC2 placement group strategy places instances across different unerlying hardware?
+53 Q: What EC2 placement group strategy places instances across different underlying hardware?
 53 A: Spread placement group
 
 54 Q: In a spread placement group, you can have no more than _ instances per group per AZ?
@@ -1384,10 +1384,10 @@
 462 Q: T or F: NAT Gateways are inherently HA.
 462 A: F. You must deploy multiple NAT Gateways into multiple AZs for high availability.
 
-463 Q: In order to use an Endpoint Gateway, you must enable ____ ____ in your ____.
+463 Q: In order to use a Gateway Endpoint, you must enable ____ ____ in your ____.
 463 A: DNS resolution, VPC
 
-464 Q: T or F: You can use an Endpoint Gateway in your on-prem network if you've connected to your VPC using DX.
+464 Q: T or F: You can use a Gateway Endpoint in your on-prem network if you've connected to your VPC using DX.
 464 A: F. 
 
 465 Q: T or F: You can secure a gateway endpoint using a security group.
@@ -2014,5 +2014,134 @@ m duration of 15 minutes and a maximum duration of 12 hours.
 
 672 Q: What are the 2 types of targets a Lambda function can use for its DLQ?
 672 A: SQS, SNS. See https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq
+
+673 Q: Do you enable route propagation on a VGW or a CGW?
+673 A: VGW.
+
+674 Q: re: CloudFormation...use the ____ attribute when you want to wait on resource configuration actions before stack creation proceeds.
+674 A: CreationPolicy. See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html Compare this to wait conditions: "For Amazon EC2 and Auto Scaling resources, we recommend that you use a CreationPolicy attribute instead of wait conditions." ... and wait conditions are best for coordinating the creation of stack resources with configuration actions external to the stack. See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
+
+675 Q: Which CloudFormation intrinsic function returns an array that lists Availability Zones for a specified region in alaphabetical order. 
+675 A: Fn:GetAZs. YAML: "Fn::GetAZs: us-east-2"
+
+676 Q: T or F: re: CloudFormation, you can use intrinsic functions only in specific parts of a template.
+676 A: T. "Currently, you can use intrinsic functions in resource properties, outputs, metadata attributes, and update policy attributes. You can also use intrinsic functions to conditionally create stack resources." see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
+
+677 Q: T or F: You can configure VPC security groups via AWS Firewall Manager.
+677 A: T
+
+678 Q: T or F: You can configure NACLs via AWS Firewall Manager.
+678 A: F
+
+697 Q: If I'm using CloudFront and my origin is in my own data center, I (can|cannot) use Direct Connect to transfer the objects stored in my own data center.
+697 A: Can
+
+698 Q: ____ ____ ____ are a way for customers to order and manage multiple direct connect ports as a single larger connection instead of as separate discrete connections.
+698 A: Link Aggregation Groups (LAGs)
+
+699 Q: All LAG connections must be dedicated connections and have a port speed of ____ Gbps or ____ Gbps.
+699 A: 1 or 10. You can't mix 1Gbps and 10Gbps connections in the same LAG.
+
+700 Q: T or F: You can use a LAG with a Direct Connect Dedicated Connection.
+700 A: T. But not a Hosted Connection
+
+701 Q: T or F: You can use a LAG with a Direct Connect Hosted Connection.
+701 A: F. Only a Dedicated Connection
+
+702 Q: You can have a maximum of ____ connections in a LAG.
+702 A: 4
+
+703 Q: ____ ____ ____ is a grouping of virtual private gateways (VGWs) and private virtual interfaces (VIFs).
+703 A: Direct Connect gateway (DX Gateway)
+
+704 Q: T or F: AWS Managed VPN service does not support Jumbo Frames.
+704 A: T. It does not.
+
+705 Q: T or F: Transit VIFs support jumbo frames
+705 A: T.
+
+706 Q: What AWS service provides static IP addresses that provide a fixed entry point to your applications and eliminate the complexity of managing specific IP addresses for different AWS Regions and Availability Zones?
+706 A: AWS Global Accelerator
+
+707 Q: What does an Elastic Network Adapter provide?
+707 A: Enhanced networking for an EC2. Can also be done with an Intel 82599 VF interface
+
+708 Q: T or F: You must specify subnets from at least two Availability Zones when you create an ALB.
+708 A: T
+
+709 Q: T or F: Each ALB target group can be associated with only one load balancer.
+709 A: T
+
+710 Q: T or F: You can use security groups with ALBs.
+710 A: T.
+
+711 Q: T or F: With Application Load Balancers, cross-zone load balancing is always enabled.
+711 A: T. See https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#cross-zone-load-balancing
+
+712 Q: T or F: With Network Load Balancers, cross-zone load balancing is disabled by default.
+712 A: T. You can enable and disable it as you need.
+
+713 Q: T or F: You can assign an Elastic IP to an NLB.
+713 A: T.
+
+714 Q: T or F: Targets behind an ELB need public IP addresses.
+714 A: F. "Both internet-facing and internal load balancers route requests to your targets using private IP addresses. Therefore, your targets do not need public IP addresses to receive requests from an internal or an internet-facing load balancer." from https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html
+
+715 Q: T or F: DX Gateway enables you to interface with VPCs in any AWS Region.
+715 A: T
+
+716 Q: T or F: DX Gateway enables you to use a single Private VIF to interface w/multiple VPCs.
+716 A: T. See https://aws.amazon.com/directconnect/faqs/
+
+717 Q: T or F: DX Gateway enables you to use a single Transit VIF to interface w/multiple Transit Gateways.
+717 A: T. Up to 3 Transit Gateways. See https://aws.amazon.com/directconnect/faqs/
+
+718 Q: What types of VIFs can you attach to the VPC-end of a DX?
+718 A: Private VIF, Public VIF, Transit VIF.
+
+719 Q: What AWS service collects findings from the security services enabled across your AWS accounts: Amazon GuardDuty (intrusion), Amazon Inspector (vulnerability scans), and Amazon Macie (PII)
+719 A: Security Hub
+
+720 Q: T or F: Cognito Identity Pools store user profiles.
+720 A: F. Cognito User Pools store user profiles. A User Pool is your user directory.
+
+721 Q: What is the storage limit of RDS MySQL?
+721 A: 6 TB
+
+722 Q: What is the storage limit of RDS MariaDB?
+722 A: 6 TB
+
+723 Q: What is the storage limit of RDS Oracle?
+723 A: 6 TB
+
+724 Q: What is the storage limit of RDS PostgreSQL?
+724 A: 6 TB
+
+725 Q: What is the storage limit of RDS SQL Server?
+725 A: 4 TB
+
+726 Q: What is the storage limit of RDS Aurora?
+726 A: 64 TB
+
+727 Q: T or F: You can't use jumbo frames on VPN connections or traffic sent over an Internet gateway.
+727 A: T. VPN connections and traffic sent over an Internet gateway cannot support jumbo frames.
+
+728 Q: T or F: You can use jumbo frames for traffic between your VPCs and your on-premises networks over AWS Direct Connect.
+728 A: T. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/network_mtu.html
+
+729 Q: What RAID levels does EBS support?
+729 A: 0, 1, and 10
+
+730 Q: What is the max size of an SNS message?
+730 A: 256 KB
+
+731 Q: T or F: You can subscribe an SQS standard or FIFO queue to an SNS topic.
+731 A: F. SNS does not support forwarding messages to SQS FIFO queues. You can use SNS to forward messages to standard queues.
+
+732 Q: What is the minimum amount of RAM you can assign to a Lambda function?
+732 A: 128 MB
+
+733 Q: What is the maximum amount of RAM you can assign to a Lambda function?
+733 A: 3 GB
 
 
