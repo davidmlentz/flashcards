@@ -272,7 +272,7 @@
 91 A: AWS Shield
 
 92 Q: T or F: You can move an instance in to or out of a placement group using the EC2 console.
-92 A: F. You can do this using the CLI or AWS Tools for Windows PowerShell.
+92 A: F. You can do this using the CLI or AWS Tools for Windows PowerShell. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#change-instance-placement-group
 
 93 Q: What sizes (2) does Snowball come in? 
 93 A: 50 TB or 80 TB. 
@@ -1751,8 +1751,7 @@
 584 A: 15 minutes. Temporary credentials returned by the STS:AssumeRole action are valid for a duration you specify, with a minimum duration of 15 minutes and a maximum duration of 12 hours.
 
 585 Q: What's the maximum amount of time you can set the STS:AssumeRole action's temporary credentials to last?
-585 A: 12 hours. Temporary credentials returned by the STS:AssumeRole action are valid for a duration you specify, with a minimu
-m duration of 15 minutes and a maximum duration of 12 hours.
+585 A: 12 hours. Temporary credentials returned by the STS:AssumeRole action are valid for a duration you specify, with a minimum duration of 15 minutes and a maximum duration of 12 hours.
 
 586 Q: For how long are certificates created in ACM valid?
 586 A: 13 months
@@ -2198,4 +2197,14 @@ m duration of 15 minutes and a maximum duration of 12 hours.
 748 Q: T or F: You can change the size of an EBS volume—even the root device—that's attached to a running instance.
 748 A: T. 
 
+749 Q: What 2 STS APIs could a custom identity broker application use?
+749 A: AssumeRole, GetFederationToken
 
+750 Q: What type of federation would you use to integrate Active Directory with AWS?
+750 A: SAML 2.0 federation. AD is the most common but not the only SAML 2.0 compatible IdP
+
+751 Q: Instead of using the STS:AssumeRoleWithWebIdentity API, AWS recommends that you use what?
+751 A: Cognito. It allows anonymous users, data syncrhonization, and MFA.
+
+752 Q: Instead of using a token vending machine, AWS recommends that you use what?
+752 A: Cognito. 
