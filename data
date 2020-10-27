@@ -236,7 +236,7 @@
 79 A: T. EventBridge is the only event-based service that integrates directly with third-party SaaS partners.
 
 80 Q: What AWS service can be used to stop and start Amazon EC2 instances by running AWS Command Line Interface (CLI) file commands on a set schedule.
-80 A: AWS Data Pipeline 
+80 A: AWS Data Pipeline. "Based on a schedule you define, your pipeline regularly performs processing activities such as distributed data copy, SQL transforms, MapReduce applications, or custom scripts against destinations such as Amazon S3, Amazon RDS, or Amazon DynamoDB...AWS Data Pipeline provides built-in activities for common actions such as copying data between Amazon Amazon S3 and Amazon RDS, or running a query against Amazon S3 log data." from https://aws.amazon.com/datapipeline/faqs/ 
 
 81 Q: T or F: You can use Amazon CloudWatch alarms to automatically stop or terminate EC2 instances that have gone unused or underutilized for too long.
 81 A: T
@@ -394,7 +394,7 @@
 132 Q: T or F: KMS encryption of CloudWatch Logs is optional.
 132 A: T.
 
-133 Q: T or F: CloudWatch Logs can export logs to an S3 bucket only if it's SSE-KMS encrypted.
+133 Q: T or F: CloudWatch Logs can export logs to an SSE-KMS encrypted S3 bucket.
 133 A: F. Exporting to S3 buckets that are SSE-S3 encrypted (AES-256) is supported. Exporting to S3 buckets encrypted with SSE-KMS is not supported.
 
 134 Q: What's the maximum amount of time it can take CloudWatch Logs to export data to S3?
@@ -1627,7 +1627,7 @@
 543 Q: T or F: You can use consistent hashing with both Redis and Memcached.
 543 A: F. Memcached only.
 
-544 Q: Redis relication is (synchronous|asynchronous).
+544 Q: Redis replication is (synchronous|asynchronous).
 544 A: Asynchronous. You could lose some data if your primary node fails. Even if it automatically fails over and promotes a read replica as the new primary, that replica may not have all the data the original primary had. "If you have crucial data that cannot be lost (for example, transactional or purchase data), we recommend that you also store that in a durable database such as Amazon DynamoDB or Amazon RDS." https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf
 
 545 Q: T or F: You can use a self-signed certificate for HTTPS communication between CloudFront and your origin.
@@ -2143,5 +2143,59 @@ m duration of 15 minutes and a maximum duration of 12 hours.
 
 733 Q: What is the maximum amount of RAM you can assign to a Lambda function?
 733 A: 3 GB
+
+734 Q: To use read replicas with RDS MySQL, you have to use with storage engine?
+734 A: InnoDB. Not MyISAM
+
+735 Q: If your AWS Batch job has insufficient permissions to run, your job will be stuck in the ____ state.
+735 A: RUNNABLE
+
+736 Q: If AWS can't provision the CPU and RAM you requested for your AWS Batch job, your job will be stuck in the ____ state.
+736 A: RUNNABLE
+
+737 Q: If your AWS Batch job can't run due to EC2 limits on your account, it  will be stuck in the ____ state.
+737 A: RUNNABLE
+
+738 Q: T or F: By default, IAM users can't access the Billing and Cost Management Console.
+738 A: T. That access has to be explicitly activate by the account owner, and then proper IAM permissions must be given to users. "By default, IAM users do not have access to the AWS Billing and Cost Management console. You or your account administrator must grant users access. You can do this by activating IAM user access to the Billing and Cost Management console and attaching an IAM policy to your users." see https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html
+
+739 Q: What is the sequence of fields in a cron expression?
+739 A: Minute, hour, day of month, month, day of week
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                   7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * <command to execute>
+
+740 Q: T or F: When you create an OpsWorks Stack, all its resources must be in the same region.
+740 A: T. An OpsWorks Stack can only control resources within its region. An OpsWorks Stack can be cloned, but only within the region.
+
+741 Q: T or F: You can clone an OpsWorks Stack.
+741 A: T. But only within its region; you can't create a clone into a new region.
+
+742 Q: T or F: Without a Stack Policy, all resources in a CloudFormation stack can be updated by anyone with permission to update the stack.
+742 A: T. "When you create a stack, all update actions are allowed on all resources. By default, anyone with stack update permissions can update all of the resources in the stack." See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+
+743 Q: You can prevent stack resources from being unintentionally updated or deleted during a stack update by using a ____ ____.
+743 A: Stack policy. See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+
+744 Q: After you set a ____ ____, all of the resources in the stack are protected by default.
+744 A: Stack policy. "To allow updates on specific resources, you specify an explicit Allow statement for those resources in your stack policy. You can define only one stack policy per stack, but, you can protect multiple resources within a single policy. A stack policy applies to all AWS CloudFormation users who attempt to update the stack. You can't associate different stack policies with different users." from https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+
+745 Q: A CloudFormation Stack Policy can be removed using the CLI.
+745 A: F. You can't remove a Stack Policy once it's created. You can update it, and you have to do that via the CLI.
+
+746 Q: A CloudFormation Stack Policy can be updated using the CLI.
+746 A: T. It can't be removed and it can't be updated using the console.
+
+747 Q: T or F: You change the instance type of an EBS-backed instance when the instance is stopped.
+747 A: T. But not while it's running. You can also change its kernel and user data. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device
+
+748 Q: T or F: You can change the size of an EBS volume—even the root device—that's attached to a running instance.
+748 A: T. 
 
 
