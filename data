@@ -646,7 +646,7 @@
 216 Q: Kinesis data streams, SQS, DynamoDB streams invoke Lambda functions (synchronously|asynchronously|via event source mapping)?
 216 A: via event source mapping. "You can use event source mappings to process items from a stream or queue in services that don't invoke Lambda functions directly." (from https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html)
 
-217 Q: Instead of sending the output (and error messages) from your Lambda functions to DLQs, Amazone recommends sending them to _____.
+217 Q: Instead of sending the output (and error messages) from your Lambda functions to DLQs, Amazon recommends sending them to _____.
 217 A: Destinations
 
 218 Q: T or F: Cross-zone load balancing is enabled by default on an NLB.
@@ -2208,3 +2208,74 @@
 
 752 Q: Instead of using a token vending machine, AWS recommends that you use what?
 752 A: Cognito. 
+
+753 Q: A service catalog Launch Constraint (or Launch Role) is required when you add a product to the service catalog.
+753 A: F. Launch Constraint is optional. Without it, users who launch the product must have IAM permissions for CloudFormation and all resources and actions named in the product's template.
+
+754 Q: T or F: When you buy a regional reserved instance, you reserve computing capacity in the designated region.
+754 A: F. "A regional Reserved Instance does not reserve capacity." But a zonal RI does reserve capacity within the AZ where it's purchased. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
+
+755 Q: T or F: When you buy a zonal reserved instance, you reserve computing capacity in the designated AZ.
+755 A: T. "A zonal Reserved Instance reserves capacity in the specified Availability Zone." But a regional RI does not reserve capacity within its region. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
+
+756 Q: T or F: A regional RI allows you to launch instances of different sizes.
+756 A: T. As long as they're within the same family. "The Reserved Instance discount applies to instance usage within the instance family, regardless of size. Only supported on Amazon Linux/Unix Reserved Instances with default tenancy." See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
+
+757 Q: T or F: A zonal RI allows you to launch instances of different sizes.
+757 A: F. Zonal reserved instances do not have instance size flexibility. Regional RIs do. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
+
+758 Q: What AWS service would you use if you want to build a chatbot?
+758 A: Amazon Lex. Lex uses voice and text.
+
+759 Q: What AWS service do you use for text to speech?
+759 A: Amazon Polly
+
+760 Q: T or F: SimpleAD supports MFA.
+760 A: F
+
+761 Q: If an SCP is present, it implicitly (allows|denies) all actions.
+761 A: Denies. It has to contain Effect:Allow statements in order to do anything. Blacklist = start by allowing *, then deny specific actions. Whitelist = Just include Effect:Allow for the actions you want to allow (since everything else is already implicitly denied).761 Q: If an SCP is present, it implicitly (allows|denies) all actions.
+
+762 Q: An account in an AWS Organization can receive RI discounts on any instances it uses that match any reservations purchased by (the root account|any other account).
+762 A: Any other account. But the master account can disable RI discount sharing between accounts.
+
+763 Q: T or F: An SCP can have multiple Statement elements.
+763 A: F. But you can have multiple objects in a single Statement elements. Every SCP should have one and only one Statement elements.
+
+764 Q: T or F: Systems Manager Parameter Store can hold encrypted strings.
+764 A: T. "You can encrypt your sensitive data using your own AWS Key Management Service (KMS) key or your user account default key provided by AWS KMS." From https://aws.amazon.com/systems-manager/faq/
+
+765 Q: T or F: If you're performing a homogenous migration from MySQL to Amazon RDS MySQL or Amazon Aurora MySQL, you should always use DMS.
+765 A: F. "If you're performing a homogeneous migration, use your engine’s native tools (such as MySQL dump or MySQL replication) whenever possible." See https://aws.amazon.com/premiumsupport/knowledge-center/migrate-mysql-rds-dms/ BUT if you need availability during the migration, you should use DMS.
+
+766 Q: T or F: Lambda reads events from Kinesis Data Streams.
+766 A: T. DynamoDB, Kinesis Data Streams, Kafka, SQSa
+
+767 Q: T or F: Lambda reads events from DynamoDB.
+767 A: T. DynamoDB, Kinesis Data Streams, Kafka, SQS
+
+768 Q: T or F: Lambda reads events from Kafka.
+768 A: T. DynamoDB, Kinesis Data Streams, Kafka, SQS
+
+769 Q: T or F: Lambda reads events from SQS.
+769 A: T. DynamoDB, Kinesis Data Streams, Kafka, SQS
+
+770 Q: T or F: KDF can trigger a Lambda function to transform the data in its stream.
+770 A: T. See https://docs.aws.amazon.com/firehose/latest/dev/data-transformation.html
+
+771 Q: How long does it take to transfer 1 TB over a 100 Mbps connection?
+771 A: One day. (1 day and 41 minutes. See https://www.expedient.com/knowledgebase/tools-and-calculators/file-transfer-time-calculator/)
+
+772 Q: T or F: You can expand the size of an EBS root volume from the console.
+772 A: T. And the CLI (aws ec2 modify-volume). You don't have to detach the volume first.
+
+773 Q: T or F: You can expand the size of an EBS root volume from the CLI.
+773 A: T. Using aws ec2 modify-volume. Also from the console. You don't have to detach the volume first.
+
+774 Q: T or F: You can access S3 via HTTPS only.
+774 A: F. S3 exposes HTTP and HTTPS endpoints.
+
+775 Q: T or F: S3 access logs are delivered in real time.
+775 A: F. Might take hours to deliver. S3 event notifications are faster.
+
+

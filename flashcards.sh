@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: accept a parameter (string) and select randomly only from questions that contain that string
+# e.g. ./flashcards.sh glacier
+
 ANOTHER=y
 
 while true; do
