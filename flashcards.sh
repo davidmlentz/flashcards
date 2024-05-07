@@ -3,16 +3,19 @@
 # TODO: accept a parameter (string) and select randomly only from questions that contain that string
 # e.g. ./flashcards.sh glacier
 
+#DATAFILE=data
+DATAFILE=ddog_data
+
 ANOTHER=y
 
 while true; do
 	if [ "$ANOTHER" = "y" ]; then
 		clear
-		Qtemp=$(grep -e '^[0-9]* Q:' data | sort -R | head -n 1)
+		Qtemp=$(grep -e '^[0-9]* Q:' $DATAFILE | sort -R | head -n 1)
 		Q=$(echo $Qtemp | sed 's/^\(.*\)Q: \(.*\)$/\2/')
 		echo $Q
 		num=$(echo $Qtemp | sed 's/^\([0-9]*\)\(.*\)/\1/')
-		Atemp=$(grep -e "^$num " data )
+		Atemp=$(grep -e "^$num " $DATAFILE )
 		read YOURANSWER
 		A=$(echo $Atemp | sed 's/^\(.*\)A: \(.*\)$/\2/')
 		echo $A
