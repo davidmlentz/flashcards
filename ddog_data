@@ -12,3 +12,33 @@
 
 5 Q: What are the reserved tags required for using Unified Service Tagging?
 5 A: env, service, and version
+
+6 Q: What are the reserved tag keys?
+6 A: host, device, source, service, env, and version
+
+7 Q: T/F: host is a reserved tag key.
+7 A: T
+
+8 Q: T/F: device is a reserved tag key.
+8 A: T
+
+9 Q: T/F: source is a reserved tag key.
+9 A: T
+
+10 Q: T/F: env is a reserved tag key.
+10 A: T
+
+11 Q: T/F: version is a reserved tag key.
+11 A: T
+
+12 Q: T/F: date is a reserved tag key.
+12 A: F
+
+13 Q: T/F: service is a reserved tag key.
+13 A: F
+
+14 Q: T/F: trace is a reserved tag key.
+14 A: F
+
+15 Q: T/F: container is a reserved tag key.
+15 A: F
