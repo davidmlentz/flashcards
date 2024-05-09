@@ -1,11 +1,14 @@
-1 Q: question 1 placeholder
-1 A: answer 1 placeholder
+1 Q: What is the path to the Agent log directory (v6+) on a Linux host?
+1 A: /var/log/datadog
 
-2 Q: question 2 placeholder
-2 A: answer 2 placholder
+2 Q: What is the path to the Agent log directory on a Mac host (Agent v728+ and v6.28+)?
+2 A: /opt/datadog-agent/logs
 
-3 Q: question 3 placeholder
-3 A: answer 3 placeholder
+3 Q: What is the path to the Agent log directory on a Mac host (Agent older than v6.28.0/7.28.0)?
+3 A: /var/log/datadog
 
-4 Q: question 4 placeholder
-5 A: answer 4 placeholder
+4 Q: What is the path to the Agent log directory on a Windows host?
+4 A: C:\ProgramData\Datadog\logs
+
+5 Q: What are the reserved tags required for using Unified Service Tagging?
+5 A: env, service, and version
