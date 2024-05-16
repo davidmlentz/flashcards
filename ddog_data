@@ -42,3 +42,9 @@
 
 15 Q: T/F: container is a reserved tag key.
 15 A: F
+
+16 Q: T/F: Trace collection is enabled by default on Agent 6+.
+16 A: T
+
+17 Q: What is the default port for tracing?
+17 A: 8126
