@@ -48,3 +48,12 @@
 
 17 Q: What is the default port for tracing?
 17 A: 8126
+
+18 Q: T/F: Collecting logs is enabled by default in the Datadog agent.
+18 A: F. Collecting logs is not enabled by default in the Datadog Agent.
+
+19 Q: What port does the Agent use to send logs to Datadog?
+19 A: 10516 (TCP)
+
+20 Q: T/F: If port 10516 can't be opened, you can configure the Agent to send logs to Datadog via HTTPS. 
+20 A: T
