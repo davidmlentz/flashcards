@@ -57,3 +57,38 @@
 
 20 Q: T/F: If port 10516 can't be opened, you can configure the Agent to send logs to Datadog via HTTPS. 
 20 A: T
+
+21 Q: ____ is described as "a metrics aggregation service bundled with the Datadog Agent."
+21 A: DogstatsD
+
+22 Q: DogStatsD implements the _____ protocol and adds a few Datadog-specific extensions
+22 A: StatsD
+
+23 Q: What are the Datadog-specific extensions that DogStatsD adds to the StatsD protocol?
+23 A: histograms, events, service checks, tagging
+
+24 Q: DogStatsD accepts data using what protocol?
+24 A: UDP
+
+25 Q: As it receives data, DogStatsD aggregates multiple data points for each unique metric into a single data point over a period of time called the _____ _____.
+25 A: flush interval
+
+26 Q: DogStatsD uses a flush interval of how many seconds?
+26 A: 10
+
+27 Q: DogStatsD is enabled by default over UDP port ____ for Agent v6+.
+27 A: 8125
+
+28 Q: By default, DogStatsD listens on UDP port ____.
+28 A: 8125
+
+29 Q: T/F: You can configure DogStatsD to use a Unix domain socket.
+29 A: T
+
+30 Q: What parameter do you update in your datadog.yaml file if you want to change your DogStatsD port?
+30 A: dogstatsd_port
+
+31 Q: The easiest way to get your custom application metrics into Datadog is to send them to _____, a metrics aggregation service bundled with the Datadog Agent.
+31 A: DogStatsD
+
+
