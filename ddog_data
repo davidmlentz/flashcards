@@ -91,4 +91,5 @@
 31 Q: The easiest way to get your custom application metrics into Datadog is to send them to _____, a metrics aggregation service bundled with the Datadog Agent.
 31 A: DogStatsD
 
-
+32 Q: What metric shows a value of 1 if the Agent is reporting to Datadog?
+32 A: datadog.agent.running
