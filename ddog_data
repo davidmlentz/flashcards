@@ -93,3 +93,51 @@
 
 32 Q: What metric shows a value of 1 if the Agent is reporting to Datadog?
 32 A: datadog.agent.running
+
+33 Q: What port exposes runtime metrics about the Agent?
+33 A: 5000
+
+34 Q: What port is used by the Agent CLI and GUI to send commands and pull information from the running Agent?
+34 A: 5001
+
+35 Q: What port serves the GUI server on Windows and macOS?
+35 A: 5002
+
+36 Q: What port is used for the DogStatsD server to receive external metrics?
+36 A: 8125
+
+37 Q: What port does the Agent use to send Metrics, APM, Live Processes & Containers data?
+37 A: 443/tcp
+
+38 Q: What port does the Agent use for NTP?
+38 A: 123/udp
+
+39 Q: What port is used for custom Agent autoscaling?
+39 A: 8443/tcp
+
+40 Q: What port does the Agent use for log collection over TCP?
+40 A: 10516
+
+41 Q: What ports are used for the Kubernetes HTTP Kubelet?
+41 A: 10255 and 10250
+
+42 Q: What port does the Agent use for the go_expvar server?
+42 A: 5000/tcp
+
+43 Q: What port does the IPC API listen on?
+43 A: 5001/tcp
+
+44 Q: What port does the Agent use for the APM go_expvar server?
+44 A: 5012/tcp
+
+45 Q: What port does the Process Agent use for debug endpoints?
+45 A: 6062/tcp
+
+46 Q: What port does the Process Agent use for configuing runtime settings?
+46 A: 6162/tcp
+
+47 Q: What port does DogStatsD use if dogstatsd_non_local_traffic is set to false?
+47 A: 8125/udp
+
+48 Q: What port does the APM receiver use?
+48 A: 8126/tcp
