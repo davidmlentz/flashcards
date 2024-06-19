@@ -159,4 +159,3 @@
 
 54 Q: A user must have the _____ permission to scope application keys for service accounts.
 54 A: service_account_write
-
