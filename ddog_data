@@ -159,5 +159,3 @@
 
 54 Q: A user must have the _____ permission to scope application keys for service accounts.
 54 A: service_account_write
-
-55 Q: T/F: If a user’s role or permissions change, authorization scopes specified for their application keys remain unchanged.
