@@ -35,7 +35,7 @@
 12 A: F
 
 13 Q: T/F: service is a reserved tag key.
-13 A: F
+13 A: T. See https://docs.datadoghq.com/getting_started/tagging/
 
 14 Q: T/F: trace is a reserved tag key.
 14 A: F
