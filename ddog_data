@@ -141,3 +141,23 @@
 
 48 Q: What port does the APM receiver use?
 48 A: 8126/tcp
+
+49 Q: _____, in conjunction with your organization’s API key, give users access to Datadog’s programmatic API.
+49 A: application keys
+
+50 Q: An _____ key is required by the Datadog Agent to submit metrics and events to Datadog.
+50 A: API
+
+51 Q: To better protect and secure your applications, you can specify _____ _____ for your application keys to define more granular permissions and minimize the access that applications have to your Datadog data.
+51 A: authorization scopes
+
+52 Q: A user must have the _____ permission to scope their own application keys.
+52 A: user_app_keys
+
+53 Q: A user must have the _____ permission to scope application keys owned by any user in their organization.
+53 A: org_app_keys_write
+
+54 Q: A user must have the _____ permission to scope application keys for service accounts.
+54 A: service_account_write
+
+55 Q: T/F: If a user’s role or permissions change, authorization scopes specified for their application keys remain unchanged.
