@@ -93,3 +93,6 @@
 
 32 Q: What metric shows a value of 1 if the Agent is reporting to Datadog?
 32 A: datadog.agent.running
+
+33 Q:When you create a dashboard, what are the three layout options?
+33 A: Grid-based dashboards (the default), screen boards, and time boards. 
