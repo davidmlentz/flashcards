@@ -159,3 +159,6 @@
 
 54 Q: A user must have the _____ permission to scope application keys for service accounts.
 54 A: service_account_write
+
+55 Q: When creating a dashboard, what are the three layout options?
+55 A: Grid-based dashboard (the default), screen board, and time board
