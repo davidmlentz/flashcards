@@ -162,3 +162,24 @@
 
 55 Q: When the Agent runs as a container, Autodiscovery tries to discover other containers based on default configuration files named _____. 
 55 A: auto_conf.yaml See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/
+
+56 Q: T/F: Tag keys must start with a letter.
+56 A: T
+
+57 Q: T/F: Tag keys may contain underscores.
+57 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
+
+58 Q: T/F: Tag keys may contain minuses.
+58 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
+
+59 Q: T/F: Tag keys may contain colons.
+59 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
+
+60 Q: T/F: Tag keys may contain periods.
+60 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
+
+61 Q: T/F: Tag keys may contain slashes.
+61 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
+
+62 Q: When creating a dashboard, what are the three layout options?
+62 A: Grid-based dashboard (the default), screen board, and time board
