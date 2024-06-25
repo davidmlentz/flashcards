@@ -195,3 +195,6 @@
 
 66 Q: T/F: When metrics are submitted using fractional timestamps, they are rounded to the nearest second 
 66 A: T
+
+67 Q: What command can you use to display the distribution and version of a Linux host?
+67 A: cat /etc/os-release
