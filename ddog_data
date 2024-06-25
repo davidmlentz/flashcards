@@ -192,3 +192,6 @@
 
 65 Q: T/F: Logs have to be indexed to show up in Live Tail.
 65 A: F
+
+66 Q: T/F: When metrics are submitted using fractional timestamps, they are rounded to the nearest second 
+66 A: T
