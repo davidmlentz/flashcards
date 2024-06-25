@@ -183,3 +183,12 @@
 
 62 Q: When creating a dashboard, what are the three layout options?
 62 A: Grid-based dashboard (the default), screen board, and time board
+
+63 Q: What's the environment variable that needs to be set to enable USM?
+63 A: DD_SYSTEM_PROBE_SERVICE_MONITORING_ENABLED=true See https://docs.datadoghq.com/universal_service_monitoring/setup/?tab=environmentvariableslinux
+
+64 Q: If services are running in containers, they are tagged using _____.
+64 A: labels
+
+65 Q: T/F: Logs have to be indexed to show up in Live Tail.
+65 A: F
