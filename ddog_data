@@ -198,3 +198,66 @@
 
 67 Q: What command can you use to display the distribution and version of a Linux host?
 67 A: cat /etc/os-release
+
+68 Q: What is the path to the Agent configuration file on an AIX host?
+68 A: /etc/datadog-agent/datadog.yaml. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+69 Q: What is the path to the Agent configuration file on a Linux host?
+69 A: /etc/datadog-agent/datadog.yaml. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+70 Q: What is the path to the Agent configuration file on a MacOS host?
+70 A: ~/.datadog-agent/datadog.yaml. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+71 Q: What is the path to the Agent configuration file on a Windows host?
+71 A: %ProgramData%\Datadog\datadog.yaml. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+72 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on an AIX host?
+72 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+73 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Linux host?
+73 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+74 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a CentOS host?
+74 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+75 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Debian host?
+75 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+76 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Fedora host?
+76 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+77 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a macOS host?
+77 Q: ~/.datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+78 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a RedHat host?
+78 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+79 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Suse host?
+79 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+80 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Ubuntu host?
+80 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+81 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a Windows host?
+81 A: %ProgramData%\Datadog\conf.d. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+
+82 Q: When the Agent runs as a container, Autodiscovery tries to discover other containers based on default configuration files named ____.____.
+82 A: auto_conf.yaml. See https://docs.datadoghq.com/containers/guide/auto_conf/
+
+83 Q: In a containerized environment, the Agent autodiscovers and configures checks for other containers based on their auto_conf.yaml files, which provide a default configuration for the containerized integration. You can override that default configuration by adding a custom configuration in Kubernetes _____ or Docker _____.
+83 A: annotations, labels. See https://docs.datadoghq.com/containers/guide/auto_conf
+
+84 Q: T/F: You can use the Datadog Operator or Helm to override the Autodiscovery configurations set in the auto_conf.yaml files.
+84 A: F. auto_conf.yaml takes precedence over Autodiscovery set in the Datadog Operator and Helm Charts, so in this case, you must disable auto configuration. See https://docs.datadoghq.com/containers/guide/auto_conf
+
+85 Q: To enable logging for the Container Agent, set this environment variable.
+85 A: DD_LOGS_ENABLED=true. See https://docs.datadoghq.com/logs/guide/docker-logs-collection-troubleshooting-guide/
+
+86 Q: An ____ ____ is required by the Agent to submit metrics and events to Datadog; it's unique to your organization.
+86 A: API key. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+87 Q: ____ ____, in conjunction with your organization’s API key, give users access to Datadog’s programmatic API.
+87 A: Application keys. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+88 Q: ____ ____ eys are associated with the user account that created them and by default have the permissions and scopes of the user who created them.
+88 A: Application keys. See https://docs.datadoghq.com/account_management/api-app-keys/
