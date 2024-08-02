@@ -2,7 +2,7 @@
 
 This app lets you create quiz questions for yourself to reinforce your knowledge about a topic of your choice. I've used it to build knowledge for the AWS SA Pro exam and the Datadog certifications.
 
-`chmod +x` the flashcards.sh script, then start it with `./flashcards.sh`. It'll ask you a question. It won't evaluate your answer. Type your response if you want. Hit enter to see the answer. Repeat.
+`chmod +x` the flashcards.sh script, then start it with `./flashcards.sh`. It'll ask you a question. (Use `./flashcards.sh Agent` to show only questions that contain the string "Agent.") It won't evaluate your answer. Type your response if you want. Hit enter to see the answer. Repeat.
 
 You can update the vale of `DATAFILE` in flashcards.sh to point to the file that holds your questions and answers.
 
