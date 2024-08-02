@@ -101,7 +101,7 @@
 34 A: 5001
 
 35 Q: What port serves the GUI server on Windows and macOS?
-35 A: 5002
+35 A: 5002. See https://docs.datadoghq.com/agent/guide/datadog-agent-manager-windows/ and https://docs.datadoghq.com/agent/configuration/network/
 
 36 Q: What port is used for the DogStatsD server to receive external metrics?
 36 A: 8125
@@ -164,7 +164,7 @@
 55 A: auto_conf.yaml See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/
 
 56 Q: T/F: Tag keys must start with a letter.
-56 A: T
+56 A: T. See https://docs.datadoghq.com/getting_started/tagging/
 
 57 Q: T/F: Tag keys may contain underscores.
 57 A: T, as long as they're not the first character. See https://docs.datadoghq.com/getting_started/tagging/
@@ -261,3 +261,26 @@
 
 88 Q: ____ ____ eys are associated with the user account that created them and by default have the permissions and scopes of the user who created them.
 88 A: Application keys. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+89 Q: T/F: The following is a valid tag key: 123go
+89 A: F. Tag keys must start with a letter. See https://docs.datadoghq.com/getting_started/tagging/
+
+90 Q: T/F: The following is a valid tag key: go123
+90 A: T. Numerals are OK (but the key must start with a letter). See https://docs.datadoghq.com/getting_started/tagging/
+
+91 Q: T/F: The following is a valid tag key: go_123
+91 A: T. Underscores are OK (but the key must start with a letter). See https://docs.datadoghq.com/getting_started/tagging/
+
+92 Q: T/F: The following is a valid tag key: go-123
+92 A: T. Dashes (minuses) are OK (but the key must start with a letter). See https://docs.datadoghq.com/getting_started/tagging/
+
+93 Q: T/F: The following is a valid tag key: go:123
+93 A: T. Colons are OK (but the key must start with a letter). See https://docs.datadoghq.com/getting_started/tagging/
+
+94 Q: T/F: The following is a valid tag key: go/123
+94 A: T. Slashes are OK (but the key must start with a letter). See https://docs.datadoghq.com/getting_started/tagging/
+
+95 Q: T/F: Metrics submitted with timestamps that include fractional seconds are stored in milliseconds to account for the fraction.
+95 A: F. They are rounded to the nearest whole second. See https://www.datadoghq.com/pdf/Datadog_Fundamentals_Practice_Exam.pdf
+
+
