@@ -10,7 +10,7 @@
 4 Q: What is the path to the Agent log directory on a Windows host?
 4 A: C:\ProgramData\Datadog\logs
 
-5 Q: What are the reserved tags required for using Unified Service Tagging?
+5 Q: What are the reserved tags required for using Unified Service Tagging?GB
 5 A: env, service, and version
 
 6 Q: What are the reserved tag keys?
@@ -283,4 +283,8 @@
 95 Q: T/F: Metrics submitted with timestamps that include fractional seconds are stored in milliseconds to account for the fraction.
 95 A: F. They are rounded to the nearest whole second. See https://www.datadoghq.com/pdf/Datadog_Fundamentals_Practice_Exam.pdf
 
+96 Q: T/F: The following is a valid name for a custom metric: 123go
+96 A: F. Metric names must start with a letter. See https://docs.datadoghq.com/metrics/custom_metrics/
 
+97 Q: T/F: The following is a valid name for a custom metric: go-123
+97 A: F. Metric names must only contain ASCII alphanumerics, underscores, and periods. See https://docs.datadoghq.com/metrics/custom_metrics/
