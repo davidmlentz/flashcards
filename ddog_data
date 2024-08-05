@@ -118,8 +118,8 @@
 40 Q: What port does the Agent use for log collection over TCP?
 40 A: 10516
 
-41 Q: What ports are used for the Kubernetes HTTP Kubelet?
-41 A: 10255 and 10250
+41 Q: What port is used for the Kubernetes HTTP Kubelet?
+41 A: 10255 
 
 42 Q: What port does the Agent use for the go_expvar server?
 42 A: 5000/tcp
@@ -161,7 +161,7 @@
 54 A: service_account_write
 
 55 Q: When the Agent runs as a container, Autodiscovery tries to discover other containers based on default configuration files named _____. 
-55 A: auto_conf.yaml See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/ See https://docs.datadoghq.com/containers/guide/auto_conf/
+55 A: auto_conf.yaml See https://docs.datadoghq.com/containers/guide/auto_conf/ 
 
 56 Q: T/F: Tag keys must start with a letter.
 56 A: T. See https://docs.datadoghq.com/getting_started/tagging/
@@ -227,7 +227,7 @@
 76 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
 
 77 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a macOS host?
-77 Q: ~/.datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
+77 A: ~/.datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
 
 78 Q: What is the path to the Agent configuration directory—which holds config files for Agent checks and integrations—on a RedHat host?
 78 A: /etc/datadog-agent/conf.d/. See https://docs.datadoghq.com/agent/configuration/agent-configuration-files/
@@ -259,7 +259,7 @@
 87 Q: ____ ____, in conjunction with your organization’s API key, give users access to Datadog’s programmatic API.
 87 A: Application keys. See https://docs.datadoghq.com/account_management/api-app-keys/
 
-88 Q: ____ ____ eys are associated with the user account that created them and by default have the permissions and scopes of the user who created them.
+88 Q: ____ ____ are associated with the user account that created them and by default have the permissions and scopes of the user who created them.
 88 A: Application keys. See https://docs.datadoghq.com/account_management/api-app-keys/
 
 89 Q: T/F: The following is a valid tag key: 123go
@@ -288,3 +288,6 @@
 
 97 Q: T/F: The following is a valid name for a custom metric: go-123
 97 A: F. Metric names must only contain ASCII alphanumerics, underscores, and periods. See https://docs.datadoghq.com/metrics/custom_metrics/
+
+98 Q: What port is used for the Kubernetes HTTPS Kubelet?
+98 A: 10250. See https://docs.datadoghq.com/agent/configuration/network/ 
