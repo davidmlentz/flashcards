@@ -291,3 +291,16 @@
 
 98 Q: What port is used for the Kubernetes HTTPS Kubelet?
 98 A: 10250. See https://docs.datadoghq.com/agent/configuration/network/ 
+
+99 Q: What line do you need to include in datadog.yaml to configure the Agent to use a log level of "debug"?
+99 A log_level: DEBUG  See https://docs.datadoghq.com/agent/troubleshooting/debug_mode/
+
+100 Q: The default collection interval for all Datadog standard integrations is _____ _____.
+100 A: 15 seconds. See https://docs.datadoghq.com/getting_started/integrations/
+
+101 Q: What is the variable you use to designate the start of a block of text in an alert that will appear only if the monitor detects a "no data" condition?
+101 A: {{#is_no_data}}
+
+102 Q: What is the variable you use to designate the end of a block of text in an alert that will appear only if the mon
+itor detects a "no data" condition?
+102 A: {{/is_no_data}}
