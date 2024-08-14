@@ -304,3 +304,6 @@
 102 Q: What is the variable you use to designate the end of a block of text in an alert that will appear only if the mon
 itor detects a "no data" condition?
 102 A: {{/is_no_data}}
+
+103 Q: "When graphing, Datadog sets a limit on the number of points per timeseries. To retain visual clarity, a series can have up to _____ points."
+103 A: 1500. See https://docs.datadoghq.com/dashboards/functions/rollup/
