@@ -10,7 +10,7 @@
 4 Q: What is the path to the Agent log directory on a Windows host?
 4 A: C:\ProgramData\Datadog\logs
 
-5 Q: What are the reserved tags required for using Unified Service Tagging?GB
+5 Q: What are the reserved tags required for using Unified Service Tagging?
 5 A: env, service, and version
 
 6 Q: What are the reserved tag keys?
