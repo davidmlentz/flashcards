@@ -293,7 +293,7 @@
 98 A: 10250. See https://docs.datadoghq.com/agent/configuration/network/ 
 
 99 Q: What line do you need to include in datadog.yaml to configure the Agent to use a log level of "debug"?
-99 A log_level: DEBUG  See https://docs.datadoghq.com/agent/troubleshooting/debug_mode/
+99 A: log_level: DEBUG  See https://docs.datadoghq.com/agent/troubleshooting/debug_mode/
 
 100 Q: The default collection interval for all Datadog standard integrations is _____ _____.
 100 A: 15 seconds. See https://docs.datadoghq.com/getting_started/integrations/
@@ -301,8 +301,7 @@
 101 Q: What is the variable you use to designate the start of a block of text in an alert that will appear only if the monitor detects a "no data" condition?
 101 A: {{#is_no_data}}
 
-102 Q: What is the variable you use to designate the end of a block of text in an alert that will appear only if the mon
-itor detects a "no data" condition?
+102 Q: What is the variable you use to designate the end of a block of text in an alert that will appear only if the monitor detects a "no data" condition?
 102 A: {{/is_no_data}}
 
 103 Q: "When graphing, Datadog sets a limit on the number of points per timeseries. To retain visual clarity, a series can have up to _____ points."
@@ -344,8 +343,7 @@ itor detects a "no data" condition?
 115 Q: What parameter can you use in your Agent configuration file to exclude certain logs from collection based on a pattern you define?
 115 A: log_processing_rules. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
 
-116 Q: What parameter can you use in your Agent configuration file to include certain logs from collection based on a pattern you define
-?
+116 Q: What parameter can you use in your Agent configuration file to include certain logs from collection based on a pattern you define?
 116 A: log_processing_rules. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
 
 117 Q: What type of log processing rule can you use in your Agent configuration file to exclude certain logs from collection based on a pattern you define?
