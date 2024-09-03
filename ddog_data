@@ -307,3 +307,61 @@ itor detects a "no data" condition?
 
 103 Q: "When graphing, Datadog sets a limit on the number of points per timeseries. To retain visual clarity, a series can have up to _____ points."
 103 A: 1500. See https://docs.datadoghq.com/dashboards/functions/rollup/
+
+104 Q: What command can you use to verify the successful installation of the Agent?
+104 A: sudo datadog-agent status
+
+105 Q: What port is used for the DogStatsD server to receive custom metrics?
+105 A: 8125. See https://docs.datadoghq.com/developers/dogstatsd/
+
+106 Q: What are the available Agent log levels?
+106 A: OFF, CRITICAL, ERROR, WARN, INFO, DEBUG, TRACE. See https://docs.datadoghq.com/agent/troubleshooting/debug_mode/
+
+107 Q: What is the Agent's default log level?
+107 A: INFO. See https://docs.datadoghq.com/agent/troubleshooting/debug_mode/
+
+108 Q: On an EC2 instance with the instance ID i-elizabeth, the file /etc/datadog-agent/datadog.yaml includes the line "hostname: susan" The command `hostname -f` returns "nancy" What hostname does Datadog assign to this Agent?
+108 A: susan. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+109 Q: On an EC2 instance with the instance ID i-elizabeth, the file /etc/datadog-agent/datadog.yaml includes the line "hostname: ip-susan" The command `hostname -f` returns "nancy" What hostname does Datadog assign to this Agent?
+109 A: nancy. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+110 Q: On an EC2 instance with the instance ID i-elizabeth, the file /etc/datadog-agent/datadog.yaml includes the line "hostname: ip-susan" The command `hostname -f` returns "ip-192-0-0-1" What hostname does Datadog assign to this Agent?
+110 A: i-elizabeth. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+111 Q: On an EC2 instance with the instance ID i-elizabeth, the "hostname" line in /etc/datadog-agent/datadog.yaml is commented out. The command `hostname -f` returns "nancy" What hostname does Datadog assign to this Agent?
+111 A: nancy. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+112 Q: On an EC2 instance with the instance ID i-elizabeth, the Agent cannot reach the EC2 metadata endpoint on the host. The file /etc/datadog-agent/datadog.yaml includes the line "hostname: ip-susan". The command `hostname -f` returns "nancy" What hostname does Datadog assign to this Agent?
+112 A: nancy. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+113 Q: On an EC2 instance with the instance ID i-elizabeth, the Agent cannot reach the EC2 metadata endpoint on the host. The file /etc/datadog-agent/datadog.yaml includes the line "hostname: susan". The command `hostname -f` returns "nancy" What hostname does Datadog assign to this Agent?
+113 A: Susan. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+114 Q: On an EC2 instance with the instance ID i-elizabeth, the Agent cannot reach the EC2 metadata endpoint on the host. The file /etc/datadog-agent/datadog.yaml includes the line "hostname: ip-susan" The command `hostname -f` returns "ip-192-0-0-1" What hostname does Datadog assign to this Agent?
+114 A: ip-192-0-0-1. See https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
+
+115 Q: What parameter can you use in your Agent configuration file to exclude certain logs from collection based on a pattern you define?
+115 A: log_processing_rules. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
+
+116 Q: What parameter can you use in your Agent configuration file to include certain logs from collection based on a pattern you define
+?
+116 A: log_processing_rules. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
+
+117 Q: What type of log processing rule can you use in your Agent configuration file to exclude certain logs from collection based on a pattern you define?
+117 A: exclude_at_match. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
+
+118 Q: What type of log processing rule can you use in your Agent configuration file to include certain logs from collection based on a pattern you define?
+118 A: include_at_match. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
+
+119 Q: What type of log processing rule can you use in your Agent configuration file to scrub sensitive data from your logs?
+119 A: mask_sequences. See https://docs.datadoghq.com/agent/logs/advanced_log_collection/?tab=configurationfile#filter-logs
+
+120 Q: What type of log processing rule can you use in your Agent configuration file to aggregate several log lines into a single entry?
+120 A: multi_line
+
+121 Q: T/F: All Agent traffic is sent over SSL?
+121 A: T. See https://docs.datadoghq.com/agent/configuration/network/
+
+122 Q: T/F: All of the Agent's outbound traffic is sent over SSL through TCP or UDP.
+122 A: T. See https://docs.datadoghq.com/agent/configuration/network/
