@@ -152,13 +152,13 @@
 51 A: authorization scopes
 
 52 Q: A user must have the _____ permission to scope their own application keys.
-52 A: user_app_keys
+52 A: user_app_keys See https://docs.datadoghq.com/account_management/api-app-keys/
 
 53 Q: A user must have the _____ permission to scope application keys owned by any user in their organization.
-53 A: org_app_keys_write
+53 A: org_app_keys_write See https://docs.datadoghq.com/account_management/api-app-keys/
 
 54 Q: A user must have the _____ permission to scope application keys for service accounts.
-54 A: service_account_write
+54 A: service_account_write See https://docs.datadoghq.com/account_management/api-app-keys/
 
 55 Q: When the Agent runs as a container, Autodiscovery tries to discover other containers based on default configuration files named _____. 
 55 A: auto_conf.yaml See https://docs.datadoghq.com/containers/guide/auto_conf/ 
@@ -358,7 +358,7 @@
 120 Q: What type of log processing rule can you use in your Agent configuration file to aggregate several log lines into a single entry?
 120 A: multi_line
 
-121 Q: T/F: All Agent traffic is sent over SSL?
+121 Q: T/F: All Agent traffic is sent over SSL.
 121 A: T. See https://docs.datadoghq.com/agent/configuration/network/
 
 122 Q: T/F: All of the Agent's outbound traffic is sent over SSL through TCP or UDP.
@@ -372,3 +372,27 @@
 
 125 Q: _____ aggregation is how Datadog rolls up query data into buckets to represent a large number of data points on a graph.
 125 A: Time. See https://docs.datadoghq.com/metrics/#time-aggregation
+
+126 Q: _____ keys use authorization scopes.
+126 A: application. See https://docs.datadoghq.com/api/latest/scopes/ See https://docs.datadoghq.com/account_management/api-app-keys/
+
+127 Q: T/F: If a user’s role or permissions change, authorization scopes specified for their application keys remain unchanged.
+127 A: T. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+128 Q: For security reasons, API keys cannot be used to send data from a browser, mobile, or TV app, as they would be exposed client-side. Instead, end user facing applications use _____ _____ to send data to Datadog.
+128 A: client tokens. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+129 Q: T/F: When a user who created a client token is deactivated, the client token is also deactivated.
+129 A: F. The client token remains active. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+130 Q: T/F: If a user’s account is disabled, any application keys that the user created remain active.
+130 A: F. Any application keys that the user created are revoked. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+131 Q: T/F: If a user’s account is disabled, any API keys that were created by the disabled account are still valid.
+131 A: T. See https://docs.datadoghq.com/account_management/api-app-keys/
+
+132 Q: What user does the Agent run as?
+132 A: dd-agent
+
+133 Q: To use the Agent in a Docker environment, you may need to add the user _____ to the group "docker."
+133 A: dd-agent
