@@ -396,3 +396,21 @@
 
 133 Q: To use the Agent in a Docker environment, you may need to add the user _____ to the group "docker."
 133 A: dd-agent
+
+134 Q: What is the command to start the Agent on an Amazon Linux host?
+134 A: sudo systemctl start datadog-agent See https://docs.datadoghq.com/agent/basic_agent_usage/amazonlinux/#commands
+
+135 Q: What is the command to start the Agent on a Debian host?
+135 A: sudo service datadog-agent start See https://docs.datadoghq.com/agent/basic_agent_usage/deb/#commands
+
+136 Q: What is the command to start the Agent on a MacOS host?
+136 A: launchctl start com.datadoghq.agent See https://docs.datadoghq.com/agent/basic_agent_usage/osx/#commands
+
+137 Q: What is the command to start the Agent on a Red Hat host?
+137 A: sudo systemctl start datadog-agent See https://docs.datadoghq.com/agent/basic_agent_usage/redhat/#commands
+
+138 Q: What is the command to start the Agent on a Ubuntu host?
+138 A: sudo service datadog-agent start https://docs.datadoghq.com/agent/basic_agent_usage/ubuntu/#commands
+
+139 Q: What is the command to start the Agent on a Windows host?
+139 A: run, start, or start-service. See https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=standardinstallation#agent-commands
