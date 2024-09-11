@@ -128,7 +128,7 @@
 43 A: 5001/tcp
 
 44 Q: What port does the Agent use for the APM go_expvar server?
-44 A: 5012/tcp
+44 A: 5012/tcp. See https://docs.datadoghq.com/agent/configuration/network/ and https://docs.datadoghq.com/containers/kubernetes/apm/
 
 45 Q: What port does the Process Agent use for debug endpoints?
 45 A: 6062/tcp
@@ -137,7 +137,7 @@
 46 A: 6162/tcp
 
 47 Q: What port does DogStatsD use if dogstatsd_non_local_traffic is set to false?
-47 A: 8125/udp
+47 A: 8125/udp. See https://docs.datadoghq.com/agent/configuration/network/
 
 48 Q: What port does the APM receiver use?
 48 A: 8126/tcp
@@ -363,3 +363,12 @@
 
 122 Q: T/F: All of the Agent's outbound traffic is sent over SSL through TCP or UDP.
 122 A: T. See https://docs.datadoghq.com/agent/configuration/network/
+
+123 Q: T/F: In some cases, the Datadog backend initiates communication to the Agent.
+123 A: F. "Traffic is always initiated by the Agent to Datadog. No sessions are ever initiated from Datadog back to the Agent." See https://docs.datadoghq.com/agent/configuration/network/
+
+124 Q: _____ aggregation splits a single metric into multiple timeseries by tags such as host, container, and region.
+124 A: Space. See https://docs.datadoghq.com/metrics/#space-aggregation
+
+125 Q: _____ aggregation is how Datadog rolls up query data into buckets to represent a large number of data points on a graph.
+125 A: Time. See https://docs.datadoghq.com/metrics/#time-aggregation
