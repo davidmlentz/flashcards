@@ -14,7 +14,7 @@
 5 A: env, service, and version
 
 6 Q: What are the reserved tag keys?
-6 A: host, device, source, service, env, and version
+6 A: host, device, source, service, env, version, and team. See https://docs.datadoghq.com/getting_started/tagging/
 
 7 Q: T/F: host is a reserved tag key.
 7 A: T
@@ -92,7 +92,7 @@
 31 A: DogStatsD
 
 32 Q: What metric shows a value of 1 if the Agent is reporting to Datadog?
-32 A: datadog.agent.running
+32 A: datadog.agent.running. See https://docs.datadoghq.com/getting_started/agent/#agent-metrics
 
 33 Q: What port exposes runtime metrics about the Agent?
 33 A: 5000
@@ -193,7 +193,7 @@
 65 Q: T/F: Logs have to be indexed to show up in Live Tail.
 65 A: F
 
-66 Q: T/F: When metrics are submitted using fractional timestamps, they are rounded to the nearest second 
+66 Q: T/F: When metrics are submitted using fractional timestamps, they are rounded to the nearest second.
 66 A: T
 
 67 Q: What command can you use to display the distribution and version of a Linux host?
@@ -432,3 +432,9 @@
 
 145 Q: Where are Agent logs stored on a Windows host?
 145 A: C:\ProgramData\Datadog\Logs
+
+146 Q: This environment variable defaults to TRUE and is used to enable the APM Agent.
+146 A: DD_APM_ENABLED. See https://github.com/DataDog/datadog-agent/blob/main/pkg/config/config_template.yaml
+
+147 Q: T/F: Metric names may contain minuses.
+147 A: F. Metric names must only contain ASCII alphanumerics, underscores, and periods. See https://docs.datadoghq.com/metrics/custom_metrics/ 
